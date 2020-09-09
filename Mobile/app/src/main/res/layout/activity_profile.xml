@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.senior.wiet.lib.model.ProfileModel" />
+
+        <variable
+            name="presenter"
+            type="com.senior.wiet.activities.profile.ProfileContract.Presenter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/custom_background"
+        tools:context=".activities.profile.ProfileActivity">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="31.503dp"
+            android:layout_height="41.61dp"
+            android:src="@drawable/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/header"
+            app:layout_constraintBottom_toBottomOf="@id/header"
+            />
+
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/txtTitleProfile"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="25dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonConfirm"
+            android:layout_width="78dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="84dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/custom_button_information"
+            android:onClick="@{() -> presenter.onEditButton()}"
+            android:text="@string/btnEdit"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="15dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/app_border"
+            android:elevation="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+
+            <TextView
+                style="@style/CustomTextView"
+                android:id="@+id/etFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:enabled="false"
+                android:text="Lương Minh Hiếu"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="63dp"
+                android:layout_height="63dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="40dp"
+                android:src="@drawable/profile_default_image"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/detail_info_Layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="27dp"
+                android:elevation="6dp"
+                android:background="@drawable/custom_layout_information"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etFullName">
+
+                <TextView
+                    android:id="@+id/lbLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="49dp"
+                    android:text="@string/txtCurrentLocation"
+                    android:textSize="@dimen/text_profile"
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/CustomTextView"
+                    android:id="@+id/tvLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="220dp"
+                    android:layout_marginTop="49dp"
+                    android:text="Đà Nẵng"
+                    android:textSize="@dimen/text_profile"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <TextView
+                    android:id="@+id/lbDateOfBirth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/txtdateOfBirth"
+                    android:textSize="@dimen/text_profile"
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lbLocation" />
+
+                <TextView
+                    style="@style/CustomTextView"
+                    android:id="@+id/tvDateOfBirth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="220dp"
+                    android:layout_marginTop="15dp"
+                    android:text="01/01/1990"
+                    android:textSize="@dimen/text_profile"
+                    app:layout_constraintTop_toBottomOf="@id/tvLocation"
+                    app:layout_constraintLeft_toLeftOf="parent"/>
+
+                <TextView
+                    android:id="@+id/lbVegetarian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/txtIsVegetarian"
+                    android:textSize="@dimen/text_profile"
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lbDateOfBirth" />
+
+                <TextView
+                    style="@style/CustomTextView"
+                    android:id="@+id/tvVegetarian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="220dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Không"
+                    android:textSize="@dimen/text_profile"
+                    app:layout_constraintTop_toBottomOf="@id/tvDateOfBirth"
+                    app:layout_constraintLeft_toLeftOf="parent"/>
+
+                <TextView
+                    android:id="@+id/lbAllergy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/txtIsAllergy"
+                    android:textSize="@dimen/text_profile"
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lbVegetarian" />
+
+                <TextView
+                    style="@style/CustomTextView"
+                    android:id="@+id/tvAllergy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="220dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/noneVegetarianProfile"
+                    android:textSize="@dimen/text_profile"
+                    app:layout_constraintTop_toBottomOf="@id/tvVegetarian"
+                    app:layout_constraintLeft_toLeftOf="parent"/>
+
+                <co.lujun.androidtagview.TagContainerLayout
+                    android:id="@+id/tagcontainerLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="220dp"
+                    android:layout_marginTop="12dp"
+                    app:container_background_color="@color/colorAccent"
+                    app:container_border_color="@color/colorAccent"
+                    app:container_enable_drag="false"
+                    app:horizontal_interval="10dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvVegetarian"
+                    app:tag_clickable="true"
+                    app:tag_theme="random"
+                    app:tag_background="@drawable/custom_tag_info"
+                    app:tag_border_color="@color/colorAccent"
+                    app:vertical_interval="10dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

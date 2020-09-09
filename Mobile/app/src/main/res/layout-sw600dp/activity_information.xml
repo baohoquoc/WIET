@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.senior.wiet.lib.model.InformationModel" />
+
+        <variable
+            name="presenter"
+            type="com.senior.wiet.activities.information.InformationContract.Presenter" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scvInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="vertical"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_background"
+                android:fitsSystemWindows="true"
+                tools:context="com.senior.wiet.activities.information.InformationActivity">
+
+                <TextView
+                    android:id="@+id/header"
+                    style="@style/CustomTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/txtTitleProfile"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="50sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    style="@style/CustomTextView"
+                    android:id="@+id/buttonConfirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="20dp"
+                    android:padding="5dp"
+                    android:background="@drawable/custom_button_information"
+                    android:onClick="@{() -> presenter.onSummitUserInfo()}"
+                    android:text="@string/skip"
+                    android:textColor="@color/colorWhite"
+                    android:textAllCaps="false"
+                   app:layout_constraintBottom_toBottomOf="@id/header"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/header" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/info_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="220dp"
+                    android:background="@drawable/app_border"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/etFullName"
+                        style="@style/CustomTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:enabled="false"
+                        android:text="Lương Minh Hiếu"
+                        android:textAlignment="center"
+                        android:textSize="50sp"
+                        app:layout_constraintBottom_toTopOf="@+id/detail_info_Layout"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imgAvatar"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginRight="100dp"
+                        android:src="@drawable/profile_default_image"
+                        app:layout_constraintBottom_toTopOf="@+id/detail_info_Layout"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/detail_info_Layout"
+                        style="@style/spinner_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="150dp"
+                        android:background="@drawable/custom_layout_information"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <TextView
+                            style="@style/CustomTextView"
+                            android:id="@+id/textViewLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_info"
+                            android:layout_marginTop="53dp"
+                            android:layout_marginRight="@dimen/margin_info"
+                            android:text="@string/txtCurrentLocation"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/text_information_activity"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Spinner
+                            android:id="@+id/location_spinner"
+                            style="@style/spinner_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="@dimen/margin_info"
+                            android:layout_marginRight="@dimen/margin_info"
+                            android:background="@drawable/custom_textview_information"
+                            android:paddingRight="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewLocation" />
+
+                        <TextView
+                            android:id="@+id/textViewDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_info"
+                            android:layout_marginTop="39dp"
+                            android:layout_marginRight="@dimen/margin_info"
+                            android:text="@string/txtdateOfBirth"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/text_information_activity"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/location_spinner" />
+
+
+                        <TextView
+                            android:id="@+id/tvDateOfBirth"
+                            style="@style/CustomTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="@dimen/margin_info"
+                            android:layout_marginRight="@dimen/margin_info"
+                            android:background="@drawable/custom_textview_information"
+                            android:drawableRight="@drawable/ic_date_range_black_24dp"
+                            android:hint="1/1/1990"
+                            android:onClick="@{() -> presenter.initDatePicker()}"
+                            android:padding="10dp"
+                            android:text="@={model.tvDateOfBirth}"
+                            android:textSize="@dimen/text_information_activity"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewDate" />
+
+
+                        <TextView
+                            android:id="@+id/textViewVegetarian"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_info"
+                            android:layout_marginTop="39dp"
+                            android:layout_marginRight="@dimen/margin_info"
+                            android:text="@string/txtIsVegetarian"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/text_information_activity"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvDateOfBirth" />
+
+                        <RadioGroup
+                            android:id="@+id/rdbVegetarian"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="@dimen/margin_info"
+                            android:layout_marginRight="@dimen/margin_info"
+                            android:background="@drawable/custom_textview_information"
+                            android:orientation="horizontal"
+                            android:theme="@style/MyRaidoButton"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewVegetarian">
+
+                            <RadioButton
+                                android:id="@+id/rb_none_vegetarian"
+                                style="@style/CustomTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20dp"
+                                android:checked="true"
+                                android:onClick="@{() -> presenter.onRadioButtonClicked()}"
+                                android:text="@string/isUnVegetarian"
+                                android:textSize="@dimen/text_information_activity" />
+
+                            <RadioButton
+                                android:id="@+id/rb_is_vegetarian"
+                                style="@style/CustomTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{() -> presenter.onRadioButtonClicked()}"
+                                android:text="@string/isVegetarian"
+                                android:textSize="@dimen/text_information_activity" />
+                        </RadioGroup>
+
+                        <co.lujun.androidtagview.TagContainerLayout
+                            android:id="@+id/tagcontainerLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_info"
+                            android:layout_marginTop="39dp"
+                            android:layout_marginRight="@dimen/margin_info"
+                            android:padding="10dp"
+                            app:container_background_color="@color/colorAccent"
+                            app:container_border_color="@color/colorAccent"
+                            app:container_enable_drag="false"
+                            app:horizontal_interval="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/rdbVegetarian"
+                            app:tag_background="@drawable/custom_tag_info"
+                            app:tag_border_color="@color/colorAccent"
+                            app:tag_clickable="true"
+                            app:tag_theme="random"
+                            app:vertical_interval="10dp" />
+
+                        <TextView
+                            android:id="@+id/textViewAllergy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_info"
+                            android:layout_marginRight="@dimen/margin_info"
+                            android:text="@string/txtIsAllergy"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/text_information_activity"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tagcontainerLayout" />
+
+                        <SearchView
+                            android:id="@+id/search_allergy_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginRight="@dimen/margin_info"
+                            android:background="@drawable/custom_search_background_information"
+                            android:focusableInTouchMode="true"
+                            android:onClick="@{() -> presenter.onClickSearchView()}"
+                            android:queryBackground="@color/colorWhite"
+                            android:queryHint="@string/food_name"
+                            android:searchHintIcon="@null"
+                            android:searchIcon="@null"
+                            android:textSize="@dimen/text_information_activity"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.714"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewAllergy" />
+
+                        <ImageView
+                            android:id="@+id/search_ic"
+                            android:layout_width="50dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="21dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="12dp"
+                            android:src="@drawable/ic_search"
+                            android:background="@drawable/custom_search_icon_background_information"
+                            android:paddingLeft="10dp"
+                            app:layout_constraintEnd_toStartOf="@id/search_allergy_bar"
+                            app:layout_constraintTop_toTopOf="@id/search_allergy_bar"
+                            app:layout_constraintBottom_toBottomOf="@id/search_allergy_bar"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/tag_item"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="@dimen/margin_info"
+                            android:layout_marginRight="@dimen/margin_info"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="1dp"
+                            android:background="@drawable/background_border_search_bar"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/search_allergy_bar">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@color/colorAccent"
+                    app:layout_constraintTop_toBottomOf="@+id/info_layout"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

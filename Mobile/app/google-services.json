@@ -1,0 +1,112 @@
+{
+  "project_info": {
+    "project_number": "812790634795",
+    "firebase_url": "https://bc13-wiet.firebaseio.com",
+    "project_id": "bc13-wiet",
+    "storage_bucket": "bc13-wiet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812790634795:android:4b5c97038f5a31e2614d6e",
+        "android_client_info": {
+          "package_name": "com.senior.wiet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812790634795-ebr6l26rre46jsur93ced6blnogg38ps.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.senior.wiet",
+            "certificate_hash": "7cc6e53ca3c0123cbe54c313350436074aa9b9f5"
+          }
+        },
+        {
+          "client_id": "812790634795-eeajjb1nu5n6dgfejiros7bjmt18qktl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.senior.wiet",
+            "certificate_hash": "2f7c2f8508957caf073e75fbb0dc564cd8af498b"
+          }
+        },
+        {
+          "client_id": "812790634795-so6l40t1hho19hvgm42ojldueu6ln4cv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.senior.wiet",
+            "certificate_hash": "acf2be8dc6820245086285ac8ab9a321ab69b909"
+          }
+        },
+        {
+          "client_id": "812790634795-5oh88m8bopgb9l3oqt9tpe4b60qpp10i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.senior.wiet",
+            "certificate_hash": "b1d91b6db7a509e5f0eda7e4f3a64d2173e67614"
+          }
+        },
+        {
+          "client_id": "812790634795-3h0fm1389on6uol84uorqum9514dpec6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.senior.wiet",
+            "certificate_hash": "e9cc5aeb1475ca28f2399cacb49991a5ad6793dc"
+          }
+        },
+        {
+          "client_id": "812790634795-cb1ge95hj1gtjdbdusjk0ftlcu70ht55.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.senior.wiet",
+            "certificate_hash": "7fbe243514152ad26e105eabf22b6ce518c968d8"
+          }
+        },
+        {
+          "client_id": "812790634795-lflcthf8ovdoobvvgl9pma0co9ph8uaq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.senior.wiet",
+            "certificate_hash": "a51e5fdfdf5d48fb0999da03ccff54f2c5e9d7a4"
+          }
+        },
+        {
+          "client_id": "812790634795-5j0fd9vgmsbelcgdn60sp5g0g0gaumai.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.senior.wiet",
+            "certificate_hash": "06871f9ad99159aefce632b9947d94ad9a317195"
+          }
+        },
+        {
+          "client_id": "812790634795-eenr18su487pn19d2gd0mvq224onug72.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.senior.wiet",
+            "certificate_hash": "76a99eb75e78d7e02db958bfbc54223ed93cb903"
+          }
+        },
+        {
+          "client_id": "812790634795-2ph76dv57meqlg0t4vkp2i4u1kc1b4ka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXVLN7luJbSNr0Zh5setuOKD5oYOnlhs4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "812790634795-2ph76dv57meqlg0t4vkp2i4u1kc1b4ka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

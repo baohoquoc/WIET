@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#03000000" />
+            <corners android:topLeftRadius="@dimen/app_border" android:topRightRadius="@dimen/app_border" />
+        </shape>
+    </item>
+
+    <item
+        android:bottom="0dp"
+        android:left="0dp"
+        android:right="0dp"
+        android:top="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#05000000" />
+            <corners android:topLeftRadius="@dimen/app_border" android:topRightRadius="@dimen/app_border" />
+        </shape>
+    </item>
+
+    <item
+        android:bottom="0dp"
+        android:left="0dp"
+        android:right="0dp"
+        android:top="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#08000000" />
+            <corners android:topLeftRadius="@dimen/app_border" android:topRightRadius="@dimen/app_border" />
+        </shape>
+    </item>
+
+    <item
+        android:bottom="0dp"
+        android:left="0dp"
+        android:right="0dp"
+        android:top="3dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#0A000000" />
+            <corners android:topLeftRadius="@dimen/app_border" android:topRightRadius="@dimen/app_border" />
+        </shape>
+    </item>
+
+    <item
+        android:bottom="0dp"
+        android:left="0dp"
+        android:right="0dp"
+        android:top="4dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white" />
+            <corners android:topLeftRadius="@dimen/app_border" android:topRightRadius="@dimen/app_border" />
+        </shape>
+    </item>
+</layer-list>

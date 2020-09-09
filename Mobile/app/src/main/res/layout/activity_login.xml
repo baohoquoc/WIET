@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.senior.wiet.lib.model.LoginModel" />
+
+        <variable
+            name="presenter"
+            type="com.senior.wiet.activities.login.LoginContract.Presenter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/custom_background"
+        android:orientation="vertical"
+        tools:context="com.senior.wiet.activities.login.LoginActivity">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="229dp"
+            android:layout_height="120dp"
+            android:src="@drawable/new_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            android:layout_marginTop="253dp"/>
+
+        <ImageView
+            android:layout_marginTop="355dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            android:src="@drawable/new_slogan"
+            android:layout_width="251dp"
+            android:layout_height="33dp"/>
+
+        <FrameLayout
+            android:id="@+id/frameLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/frameLayout2"
+            android:layout_marginBottom="24dp">
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/fb_login_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/facebook"
+                android:layout_width="325dp"
+                android:layout_height="52dp"
+                android:background="@drawable/boder_button_custom_gg"
+                android:onClick="@{() -> presenter.onFacebookClicked()}"
+                android:text="@string/btnLoginFacebook"
+                android:paddingStart="13dp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorText" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/fb_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fb"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="9dp"
+            app:layout_constraintStart_toStartOf="@id/frameLayout1"
+            app:layout_constraintTop_toTopOf="@id/frameLayout1"
+            app:layout_constraintBottom_toBottomOf="@id/frameLayout1"/>
+
+        <FrameLayout
+            android:id="@+id/frameLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="85dp">
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/gg_login_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/google"
+                android:layout_width="325dp"
+                android:layout_height="52dp"
+                android:background="@drawable/boder_button_custom_gg"
+                android:onClick="@{() -> presenter.onGoogleClicked()}"
+                android:paddingStart="13dp"
+                android:textAllCaps="false"
+                android:text="@string/btnLoginGoogle"
+                android:textColor="@color/colorText" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/gg_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/gg"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="9dp"
+            app:layout_constraintStart_toStartOf="@id/frameLayout2"
+            app:layout_constraintTop_toTopOf="@id/frameLayout2"
+            app:layout_constraintBottom_toBottomOf="@id/frameLayout2"/>
+
+        <TextView
+            style="@style/CustomTextView"
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:text="@string/version"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

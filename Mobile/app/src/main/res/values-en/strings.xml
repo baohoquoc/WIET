@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="facebook_app_id">531785174128312</string>
+    <string name="fb_login_protocol_scheme">fb531785174128312</string>
+    <string name="skip">Next</string>
+    <string name="wellcome">Wellcome to WIET</string>
+    <string name="search_hint"> Enter the name of dish</string>
+    <string name="skip_rating">Are you sure to skip the survey?</string>
+    <string name="not_support_item">Sorry, this TAG is not supported!</string>
+    <string name="is_exist_tag"> Available in the table below!</string>
+    <string name="top_rating_food">Top dishes</string>
+    <string name="not_have_search_result">No search results!</string>
+    <string name="rating_success">Survey success</string>
+    <string name="rating_failure">Survey failed</string>
+    <string name="only_rating_one_time">Survey conducted only at the first time login</string>
+    <string name="delete_history_item">Are you sure you want to delete this dish?</string>
+    <string name="food_name">Enter the name of dish</string>
+    <string name="history_screen_title">Recommended history</string>
+    <string name="delete_history_message">Deleted successfully</string>
+    <string name="version">Version 1.2.1</string>
+    <string name="error_no_internet">Error</string>
+    <string name="no_email">No_email</string>
+    <!--Name items natigation bar-->
+    <string name="item1">Recommend</string>
+    <string name="item2">Meals today</string>
+    <string name="item3">Search</string>
+    <string name="item4">More</string>
+    <string name="item5">Chat bot</string>
+    <string name="km_from_here"> km (from current location)</string>
+    <string name="application_need_location_permission">The app must has location permission to use !</string>
+    <string name="history_empty">Data empty</string>
+    <string name="bookmark_empty">Data empty</string>
+    <string name="app_require_location_permission">App require location permission !</string>
+    <string name="do_you_agree">Do you agree ?</string>
+    <string name="another_dishes_from_this_restaurant">Other dishes from this restaurant</string>
+    <string name="noData">No data</string>
+    <string name="your_location">Your location</string>
+    <!--value Recomemmend Screen-->
+    <string name="what">What should you eat today?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">Map</string>
+    <string-array name="location_array">
+        <item>Đà Nẵng</item>
+        <item>Hà Nội</item>
+        <item>TP. HCM</item>
+        <item>An Giang</item>
+        <item>Kon Tum</item>
+        <item>Đắk Nông</item>
+        <item>Sóc Trăng</item>
+        <item>Bình Phước</item>
+        <item>Hưng Yên</item>
+        <item>Thanh Hóa</item>
+        <item>Quảng Trị</item>
+        <item>Tuyên Quang</item>
+        <item>Quảng Ngãi</item>
+        <item>Lào Cai</item>
+        <item>Vĩnh Long</item>
+        <item>Lâm Đồng</item>
+        <item>Bình Định</item>
+        <item>Nghệ An</item>
+        <item>Kiên Giang</item>
+        <item>Hà Giang</item>
+        <item>Phú Yên</item>
+        <item>Lạng Sơn</item>
+        <item>Sơn La</item>
+        <item>Tây Ninh</item>
+        <item>Nam Định</item>
+        <item>Lai Châu</item>
+        <item>Bến Tre</item>
+        <item>Khánh Hòa</item>
+        <item>Bình Thuận</item>
+        <item>Cao Bằng</item>
+        <item>Hải Phòng</item>
+        <item>Ninh Bình</item>
+        <item>Yên Bái</item>
+        <item>Gia Lai</item>
+        <item>Hoà Bình</item>
+        <item>Bà Rịa - Vũng Tàu</item>
+        <item>Cà Mau</item>
+        <item>Bình Dương</item>
+        <item>Cần Thơ</item>
+        <item>Thừa Thiên Huế</item>
+        <item>Đồng Nai</item>
+        <item>Tiền Giang</item>
+        <item>Điện Biên</item>
+        <item>Vĩnh Phúc</item>
+        <item>Quảng Nam</item>
+        <item>Đắk Lắk</item>
+        <item>Thái Nguyên</item>
+        <item>Hải Dương</item>
+        <item>Bạc Liêu</item>
+        <item>Trà Vinh</item>
+        <item>Thái Bình</item>
+        <item>Hà Tĩnh</item>
+        <item>Ninh Thuận</item>
+        <item>Đồng Tháp</item>
+        <item>Long An</item>
+        <item>Hậu Giang</item>
+        <item>Quảng Ninh</item>
+        <item>Phú Thọ</item>
+        <item>Quảng Bình</item>
+        <item>Hà Nam</item>
+        <item>Bắc Ninh</item>
+        <item>Bắc Giang</item>
+        <item>Bắc Kạn</item>
+    </string-array>
+    <string name="error_not_exist_authenticate_firebase">Your account does not have email, please try another account</string>
+    <string name="error_login_social_through_firebase">An error occurred with the social network, please try again</string>
+    <string name="add_bookmark">Add bookmark successfully</string>
+    <string name="remove_bookmark">Deleted bookmark successfully</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDyV935KuAJQP2eP3mwxgutquoj_ViW5eY</string>
+    <!--value Bookmark Screen-->
+    <string name="txtTitle">Bookmark dishes</string>
+    <!--value Recomemmend Screen-->
+    <string name="txtLabelRecommendScreen">Dish of the day</string>
+    <string name="txtLabelRecommend">You may want to eat</string>
+    <string name="txtLabelPrice">Price</string>
+    <string name="txtLabelFood">Dish</string>
+    <string name="txtlbDistance">Distance</string>
+    <string name="alert_endofrecomment">There are no suggestions for today!</string>
+    <string name="btncancel">Cancel</string>
+    <string name="btnok">OK</string>
+    <string name="mAlertDialog">Your location has not been updated yet!</string>
+
+    <!--values Splash Screen-->
+    <string name="splash">Your location could not be determined</string>
+
+    <!--value Recomemmend Screen-->
+    <!--values meal screen-->
+    <string name="txtbreakfast">Breakfast</string>
+    <string name="txtluch">Lunch</string>
+    <string name="txtdinner">Dinner</string>
+
+    <!--values more screen-->
+    <string name="txttitle">Account</string>
+    <string name="txthistoryRecommendations">&#160;Recommended history</string>
+    <string name="txtbookmarkFoods">&#160;Bookmark dishes</string>
+    <string name="txtprofile">&#160;Profile</string>
+    <string name="txtlogout">&#160;Sign out</string>
+    <string name="txtchatbot">&#160;ChatBot</string>
+
+    <!--values profile screen-->
+    <string name="txtTitleProfile">User information</string>
+    <string name="txtUserName">Lương Minh Hiếu</string>
+    <string name="txtCurrentLocation">Province/City</string>
+    <string name="txtdateOfBirth">Date of birth</string>
+    <string name="txtIsVegetarian">Vegetarian</string>
+    <string name="txtIsAllergy">Allergy</string>
+    <string name="btnEdit">Edit</string>
+    <string name="isVegetarianProfile">Yes</string>
+    <string name="noneVegetarianProfile">No</string>
+    <string name="updateInfoSuccessMessage">Update successful</string>
+    <string name="updateInfoFailMessage">Update failed</string>
+    <string name="invalidDOB">Invalid date of birth</string>
+
+
+    <string name="btnShowMap">Show on map</string>
+
+    <string name="txtrestaurent">Restaurant information</string>
+
+    <string name="txtmealtoday">Meals today</string>
+
+    <!--values login screen-->
+    <string name="btnLoginGoogle">Sign in with Google&#160;&#160;&#160;</string>
+    <string name="btnLoginFacebook">Sign in with Facebook</string>
+
+    <!--values meal screen-->
+    <string name="txttemperature">Today temperature</string>
+
+    <string name="dialoglocation">Your current location has changed. Do you want to update again?</string>
+
+    <string name="isVegetarian">Yes</string>
+    <string name="isUnVegetarian">No</string>
+
+    <!--value information screen-->
+    <string name="btndone">Done</string>
+    <string name="txtAllergy">No</string>
+    <string name="deleteAllergy">Delete success</string>
+    <string name="restartAppMessage">You have changed the vital information. Do you want to restart the application?</string>
+
+    <!--value chatbox screen-->
+    <string name="edittext">Type \"What can you do?\"</string>
+    <string name="txttitilelist">List dishes on</string>
+</resources>

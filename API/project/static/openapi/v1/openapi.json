@@ -1,0 +1,2720 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "WIET API Documentation",
+        "description": "This is an internal API documentation for WIET application",
+        "contact": {
+            "email": "bc13wiet@gmail.com"
+        },
+        "x-logo": {
+            "url": "https://2.pik.vn/20204a83bef6-e2d9-4acb-a1a8-15f027be7b13.png"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.4.1"
+    },
+    "servers": [
+        {
+            "url": "https://vogoenglish.com/api/v1.0",
+            "description": "Deployment server"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "JWT": {
+                "type": "http",
+                "scheme": "bearer",
+                "description": "JWT is taken from the server"
+            }
+        },
+        "schemas": {
+            "User": {
+                "type": "object",
+                "required": [
+                    "uid",
+                    "email",
+                    "dob",
+                    "fullname",
+                    "is_vegetarian",
+                    "avatar"
+                ],
+                "properties": {
+                    "uid": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "dob": {
+                        "type": "string"
+                    },
+                    "fullname": {
+                        "type": "string"
+                    },
+                    "is_vegetarian": {
+                        "type": "boolean"
+                    },
+                    "avatar": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "paths": {
+        "/auth": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "authenticate",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "firebase_token",
+                                    "fcm_token"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "firebase_token": {
+                                        "type": "string"
+                                    },
+                                    "fcm_token": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "example": {
+                                "firebase_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjhjZjBjNjQyZDQwOWRlODJlY2M5MjI4ZTRiZDc5OTkzOTZiNTY3NDAiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiSGnhur91IEzGsMahbmciLCJwaWN0dXJlIjoiaHR0cHM6Ly9ncmFwaC5mYWNlYm9vay5jb20vMTMzMjA0MjUwMzY2OTI4MS9waWN0dXJlIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2JjMTMtd2lldCIsImF1ZCI6ImJjMTMtd2lldCIsImF1dGhfdGltZSI6MTU4NDAwOTU3OSwidXNlcl9pZCI6IkJFOG03MHBoZEVlUnR2ak4zOGJOR0VEZmhIVjIiLCJzdWIiOiJCRThtNzBwaGRFZVJ0dmpOMzhiTkdFRGZoSFYyIiwiaWF0IjoxNTg0MDA5NTgwLCJleHAiOjE1ODQwMTMxODAsImVtYWlsIjoiaHV5ZW5uZ3V5ZXR2aWVtbG9uZ0BnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZmFjZWJvb2suY29tIjpbIjEzMzIwNDI1MDM2NjkyODEiXSwiZW1haWwiOlsiaHV5ZW5uZ3V5ZXR2aWVtbG9uZ0BnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJmYWNlYm9vay5jb20ifX0.M2OaZiuechWVlYQey7jqnNUcPCBlPxEwc01jUBULIj_8dBNNSCbxHCqCXcdy1e_SyCXwU7D9KOKtLZCfwReRIn0QxZSwfcq0qCizfXyset_IECf8cSso3gY4NGeHLgv_b2csblHALsHeMdN_eK2BxZN9XEWECB0wCT7IAglrK89C5rRXzKQnpaSMzxmYuK_6ydd9FtWoW9UeZRSCqoIxV3UnwoTvAaFBdUpsT6idp1UG6gWQ3RcYeLotIi1KUrqblp1n9hb6SvTqM6LJXnBT9j4qz-iHlorQxjIzuzC6_p7vY5_M7zOuk7KjRsN4YOsaVQ4Ca0-B3VZHdsTYsTY68Q",
+                                "fcm_token": "fnvb2hFE5bc:APA91bEVRufkbaqRFY9Xz9xIT2AqUR2OkyO8dCl9O8vj5ZtZITFJIFySunT4kpan3pG_zQE3IcQV3YfCTJa8fVoAsq9NIQU5z_-t9BHgvzDbIfDstbhX6a2T-fzgILhVKyvuJTHBGVXt"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "",
+                                        "message": "authenticate success",
+                                        "status": 201,
+                                        "success": true,
+                                        "value": {
+                                            "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODYyNTI0ODksIm5iZiI6MTU4NjI1MjQ4OSwianRpIjoiYzgzMGIyN2QtYTMxYy00NDgzLTkzYzMtYjkzNjlmZmU3NjM0IiwiaWRlbnRpdHkiOiJCRThtNzBwaGRFZVJ0dmpOMzhiTkdFRGZoSFYyIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.wbDFEUPcGKsVh6dZpOUUxOoFQYjgVipOh9Yi0GsiBBQ",
+                                            "user": {
+                                                "avatar": "https://graph.facebook.com/1332042503669281/picture",
+                                                "created_at": "Fri, 13 Mar 2020 08:06:08 GMT",
+                                                "dob": "Mon, 01 Jan 1900 00:00:00 GMT",
+                                                "email": "huyennguyetviemlong@gmail.com",
+                                                "fullname": "Hiếu Lương",
+                                                "is_first_login": false,
+                                                "is_vegetarian": false,
+                                                "location": "Hà Nội",
+                                                "uid": "BE8m70phdEeRtvjN38bNGEDfhHV2",
+                                                "updated_at": "Wed, 18 Mar 2020 11:57:08 GMT"
+                                            }
+                                        },
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "authenticate success"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "missing token in request body",
+                                        "message": "",
+                                        "status": 401,
+                                        "success": false,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "missing token"
+                    },
+                    "402": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "token is not working",
+                                        "message": "",
+                                        "status": 402,
+                                        "success": false,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "token expired"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "can not get email",
+                                        "message": "",
+                                        "status": 403,
+                                        "success": false,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "device failure"
+                    }
+                }
+            }
+        },
+        "/user": {
+            "put": {
+                "tags": [
+                    "User"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "update user",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User",
+                                "type": "object"
+                            },
+                            "example": {
+                                "uid": "BE8m70phdEeRtvjN38bNGEDfhHV2",
+                                "email": "minhhieudn98@gmail.com",
+                                "dob": "1998-10-18",
+                                "fullname": "Hiếu đẹp trai là anh",
+                                "is_vegetarian": true,
+                                "avatar": "https://lh3.googleusercontent.com/a-/AAuE7mD5AMum5Vir_Bwlps3lOCQiyAkLR3Jeql-eWQ7Q=s96-c",
+                                "location": "Đà Nẵng"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "",
+                                        "message": "update user success",
+                                        "status": 201,
+                                        "success": true,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "update success"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "not correct format request body failure",
+                                        "message": "",
+                                        "status": 401,
+                                        "success": false,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "format failure"
+                    },
+                    "402": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "not exist user failure",
+                                        "message": "",
+                                        "status": 402,
+                                        "success": false,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "exist failure"
+                    }
+                }
+            }
+        },
+        "/save_last_location": {
+            "patch": {
+                "tags": [
+                    "User"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "update location",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "location": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "location"
+                                ]
+                            },
+                            "example": {
+                                "location": "Đà Nẵng"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "",
+                                        "message": "update location success",
+                                        "status": 201,
+                                        "success": true,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "update success"
+                    },
+                    "402": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "something went wrong",
+                                        "message": "",
+                                        "status": 401,
+                                        "success": false,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "failure"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "not correct format location failure",
+                                        "message": "",
+                                        "status": 402,
+                                        "success": false,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "format failure"
+                    }
+                }
+            }
+        },
+        "/tags": {
+            "get": {
+                "tags": [
+                    "Tags"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "get tags",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 200
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "",
+                                        "message": "get list tags success",
+                                        "status": 201,
+                                        "success": true,
+                                        "value": {
+                                            "limit": 4,
+                                            "offset": 1,
+                                            "total_offset": 1351,
+                                            "total_record": 5404
+                                        },
+                                        "values": [
+                                            {
+                                                "id": 5021,
+                                                "name": "A"
+                                            },
+                                            {
+                                                "id": 5862,
+                                                "name": "a Aik Cheong Matcha Café Art vi Tra"
+                                            },
+                                            {
+                                                "id": 5479,
+                                                "name": "Aba Sạch"
+                                            },
+                                            {
+                                                "id": 7738,
+                                                "name": "Abc"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "description": "get success"
+                    }
+                }
+            }
+        },
+        "/tags/<meta_tag_id>": {
+            "get": {
+                "tags": [
+                    "Tags"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "get tags by meta_tag_id",
+                "parameters": [
+                    {
+                        "name": "meta_tag_id",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "",
+                                        "message": "get list tags success",
+                                        "status": 201,
+                                        "success": true,
+                                        "value": {},
+                                        "values": [
+                                            {
+                                                "id": 4221,
+                                                "name": "Cơm"
+                                            },
+                                            {
+                                                "id": 4503,
+                                                "name": "Cơm tấm"
+                                            },
+                                            {
+                                                "id": 4508,
+                                                "name": "Cơm chiên"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "description": "get success"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "not exist meta-tag failure",
+                                        "message": "",
+                                        "status": 401,
+                                        "success": false,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "get failure"
+                    }
+                }
+            }
+        },
+        "/meta_tags": {
+            "get": {
+                "tags": [
+                    "Meta-tags"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "get meta-tags",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 10
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "",
+                                        "message": "get list meta-tags success",
+                                        "status": 201,
+                                        "success": true,
+                                        "value": {},
+                                        "values": [
+                                            {
+                                                "e_name": "Octopus",
+                                                "id": 13,
+                                                "v_name": "Bạch tuộc"
+                                            },
+                                            {
+                                                "e_name": "Bánh bèo",
+                                                "id": 71,
+                                                "v_name": "Bánh bèo"
+                                            },
+                                            {
+                                                "e_name": "Bánh bột lọc",
+                                                "id": 73,
+                                                "v_name": "Bánh bột lọc"
+                                            },
+                                            {
+                                                "e_name": "Bánh canh",
+                                                "id": 36,
+                                                "v_name": "Bánh canh"
+                                            },
+                                            {
+                                                "e_name": "Bánh cuốn",
+                                                "id": 77,
+                                                "v_name": "Bánh cuốn"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "description": "get success"
+                    }
+                }
+            }
+        },
+        "/meta_tags/<tag_id>": {
+            "get": {
+                "tags": [
+                    "Meta-tags"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "get meta-tags by tag_id",
+                "parameters": [
+                    {
+                        "name": "tag_id",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "",
+                                        "message": "get list meta-tags success",
+                                        "status": 201,
+                                        "success": true,
+                                        "value": {},
+                                        "values": [
+                                            {
+                                                "e_name": "Rice",
+                                                "id": 1,
+                                                "v_name": "Cơm"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "description": "get success"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "not exist tag_id failure",
+                                        "message": "",
+                                        "status": 401,
+                                        "success": false,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "get failure"
+                    }
+                }
+            }
+        },
+        "/city": {
+            "get": {
+                "tags": [
+                    "City"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "get cities",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "",
+                                        "message": "search cities success",
+                                        "status": 201,
+                                        "success": true,
+                                        "value": {},
+                                        "values": [
+                                            {
+                                                "code": 48,
+                                                "id": 48,
+                                                "name": "Đà Nẵng",
+                                                "name_with_type": "Thành phố Đà Nẵng",
+                                                "slug": "da-nang",
+                                                "type": "thanh-pho"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "description": "search success"
+                    }
+                }
+            }
+        },
+        "/recommend": {
+            "get": {
+                "tags": [
+                    "Recommendation"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "recommend food",
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "",
+                                        "message": "get list recommend success",
+                                        "status": 201,
+                                        "success": true,
+                                        "value": {
+                                            "limit": 5,
+                                            "offset": 1,
+                                            "total_offset": 1,
+                                            "total_record": 5
+                                        },
+                                        "values": [
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "food_id": 4049625,
+                                                "id": 2,
+                                                "image": "//media.foody.vn/res/g78/770624/s600x600/2018911162122-298e0f65fd371d694426.jpg",
+                                                "is_bookmark": true,
+                                                "name": "(Cơm) Gà quay",
+                                                "price": 38000,
+                                                "restaurant_id": 770624,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "food_id": 4258541,
+                                                "id": 24911,
+                                                "image": "/style/images/deli-dish-no-image.png",
+                                                "is_bookmark": false,
+                                                "name": "Bún bò Huế chay nhỏ",
+                                                "price": 15000,
+                                                "restaurant_id": 777549,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "food_id": 4258544,
+                                                "id": 24907,
+                                                "image": "/style/images/deli-dish-no-image.png",
+                                                "is_bookmark": false,
+                                                "name": "Bún bò Huế chay lớn",
+                                                "price": 20000,
+                                                "restaurant_id": 777549,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "food_id": 5654413,
+                                                "id": 18888,
+                                                "image": "/style/images/deli-dish-no-image.png",
+                                                "is_bookmark": false,
+                                                "name": "Bún bò xào Nam bộ",
+                                                "price": 35000,
+                                                "restaurant_id": 775562,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "food_id": 4057150,
+                                                "id": 3,
+                                                "image": "//media.foody.vn/res/g78/770624/s600x600/2018927114249-com-ga-sa-ot.jpg",
+                                                "is_bookmark": true,
+                                                "name": "(Cơm) Gà sả ớt",
+                                                "price": 25000,
+                                                "restaurant_id": 770624,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "description": "get success"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "not correct format params failure",
+                                        "message": "",
+                                        "status": 401,
+                                        "success": false,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "get failure"
+                    }
+                }
+            }
+        },
+        "/foods/<food_id>": {
+            "get": {
+                "tags": [
+                    "Foods"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "get food by id",
+                "parameters": [
+                    {
+                        "name": "food_id",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "",
+                                        "message": "get food success",
+                                        "status": 201,
+                                        "success": true,
+                                        "value": {
+                                            "address": "262 Nguyễn Văn Linh, P. Thạc Gián, Quận Thanh Khê, Đà Nẵng",
+                                            "average_score": 5.0,
+                                            "category": "Quán ăn, Giao cơm văn phòng, ",
+                                            "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                            "food_id": 4056285,
+                                            "id_food": 1,
+                                            "id_food_category": null,
+                                            "id_store": 55,
+                                            "image": "https://media.foody.vn/res/g78/770624/s600x600/2018927115339-com-ga-xe.jpg",
+                                            "image_path": "https://images.foody.vn/res/g78/770624/prof/s120x120/foody-upload-api-foody-mobile-anh-nam-jpg-180927110630.jpg",
+                                            "is_bookmark": true,
+                                            "latitude": 16.0598,
+                                            "longitude": 108.208,
+                                            "menu": "(Cơm) Gà xé, (Cơm) Gà quay, (Cơm) Gà sả ớt, (Cơm) Gà đèo le nướng lá chuối, Cơm thêm (Chén), (Cơm) Gà cari, Gói combo 1 (2 người), (Thố) Cơm gà sả ớt, (Cơm) Gà chặt Nam Hải, Cơm cánh gà chiên mắm, (Thố) cơm gà quay, Canh khổ qua độn thịt, (Thố) Cơm Gà Xé, (Thố) Cơm gà đèo le nướng lá chuối, CANH CHUA, Cơm cá kho tộ, (Thố) Cơm gà chặt Hải Nam, trứng hấp (miếng), Gói combo 2 (4 người), Cơm thêm (Dĩa), Cơm chả trứng + gà xé, Cơm sườn nướng, Cơm thịt kho trứng, Cơm chả trứng, Cơm trứng hấp thịt, Cơm",
+                                            "name": "(Cơm) Gà xé",
+                                            "price": 30000,
+                                            "rate": 3.45,
+                                            "restaurant_id": 770624,
+                                            "store_name": "Anh Năm - Cơm Gà Đèo Le",
+                                            "total_view": 0,
+                                            "total_vote": 1,
+                                            "totalreview": 24,
+                                            "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT",
+                                            "view": 0,
+                                            "worktime": null
+                                        },
+                                        "values": [
+                                            {
+                                                "average_score": 5.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "food_id": 4056285,
+                                                "id": 1,
+                                                "image": "https://media.foody.vn/res/g78/770624/s600x600/2018927115339-com-ga-xe.jpg",
+                                                "name": "(Cơm) Gà xé",
+                                                "price": 30000,
+                                                "restaurant_id": 770624,
+                                                "total_view": 0,
+                                                "total_vote": 1,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "food_id": 4049625,
+                                                "id": 2,
+                                                "image": "https://media.foody.vn/res/g78/770624/s600x600/2018911162122-298e0f65fd371d694426.jpg",
+                                                "name": "(Cơm) Gà quay",
+                                                "price": 38000,
+                                                "restaurant_id": 770624,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "food_id": 4057150,
+                                                "id": 3,
+                                                "image": "https://media.foody.vn/res/g78/770624/s600x600/2018927114249-com-ga-sa-ot.jpg",
+                                                "name": "(Cơm) Gà sả ớt",
+                                                "price": 25000,
+                                                "restaurant_id": 770624,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "food_id": 4049613,
+                                                "id": 4,
+                                                "image": "https://media.foody.vn/res/g78/770624/s600x600/2018911162032-e31d6cf59ea77ef927b6.jpg",
+                                                "name": "(Cơm) Gà đèo le nướng lá chuối",
+                                                "price": 55000,
+                                                "restaurant_id": 770624,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "food_id": 4230658,
+                                                "id": 5,
+                                                "image": "https://2.pik.vn/20204256eff8-f38c-434e-a9f5-d5ad6e2a3242.jpg",
+                                                "name": "Cơm thêm (Chén)",
+                                                "price": 5000,
+                                                "restaurant_id": 770624,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "food_id": 4056714,
+                                                "id": 6,
+                                                "image": "https://media.foody.vn/res/g78/770624/s600x600/201891214329-6246adcc4693a6cdff82.jpg",
+                                                "name": "(Cơm) Gà cari",
+                                                "price": 25000,
+                                                "restaurant_id": 770624,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "food_id": 4576704,
+                                                "id": 7,
+                                                "image": "https://media.foody.vn/res/g78/770624/s600x600/2018927115758-goi-combo-1-ga-4-mon-.jpg",
+                                                "name": "Gói combo 1 (2 người)",
+                                                "price": 130000,
+                                                "restaurant_id": 770624,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "food_id": 4056338,
+                                                "id": 8,
+                                                "image": "https://media.foody.vn/res/g78/770624/s600x600/2018927115033-com-ga-sa-ot-tay-cam.jpg",
+                                                "name": "(Thố) Cơm gà sả ớt",
+                                                "price": 40000,
+                                                "restaurant_id": 770624,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "food_id": 4056238,
+                                                "id": 9,
+                                                "image": "https://media.foody.vn/res/g78/770624/s600x600/20189271208-com-ga-chat-nam-hai.jpg",
+                                                "name": "(Cơm) Gà chặt Nam Hải",
+                                                "price": 40000,
+                                                "restaurant_id": 770624,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "food_id": 5630402,
+                                                "id": 10,
+                                                "image": "https://2.pik.vn/2020e132840b-20ad-4b88-8515-6ec724e3d5bf.jpg",
+                                                "name": "Cánh gà chiên mắm",
+                                                "price": 10000,
+                                                "restaurant_id": 770624,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "description": "get success"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "",
+                                        "message": "not exist food failure",
+                                        "status": 401,
+                                        "success": false,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "get failure"
+                    }
+                }
+            }
+        },
+        "/foods": {
+            "get": {
+                "tags": [
+                    "Foods"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "search limited foods",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": ""
+                        },
+                        "required": false
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 5
+                        },
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "",
+                                        "message": "search food success",
+                                        "status": 201,
+                                        "success": true,
+                                        "value": {},
+                                        "values": [
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "description": "Sakuko Japanese Store - Linh Đàm",
+                                                "food_id": 5693927,
+                                                "id": 17249,
+                                                "image": "//media.foody.vn/res/g78/775085/s600x600/201812211723-beabstalk-chao-rau-va-ca-moi-trang-7-thang-goi-80g-.jpg",
+                                                "name": "Beabstalk-Cháo Rau Và Cá Mồi Trắng 7 Tháng (Gói 80g)",
+                                                "price": 53000,
+                                                "restaurant_id": 775083,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "description": "Hoàng Quân - Siêu Thị Nhật - Vinhomes Central Park",
+                                                "food_id": 4040681,
+                                                "id": 18349,
+                                                "image": "//media.foody.vn/res/g78/775401/s600x600/2018911142834-untitled-1.jpg",
+                                                "name": "Cháo ăn liền Shimaya vị gà",
+                                                "price": 65000,
+                                                "restaurant_id": 775401,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "description": "Cháo Lòng Xe Đẩy",
+                                                "food_id": 4678141,
+                                                "id": 3751,
+                                                "image": "//media.foody.vn/res/g78/771481/s600x600/ddd50cc4-da77-4052-9f3c-a6907e90aa08.jpg",
+                                                "name": "Cháo bao tử",
+                                                "price": 28000,
+                                                "restaurant_id": 771481,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "description": "Như Ngọc - Cháo Dinh Dưỡng",
+                                                "food_id": 3568634,
+                                                "id": 7621,
+                                                "image": "/style/images/deli-dish-no-image.png",
+                                                "name": "Cháo Bề Bề",
+                                                "price": 15000,
+                                                "restaurant_id": 772428,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            },
+                                            {
+                                                "average_score": 0.0,
+                                                "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                "description": "Cháo Dinh Dưỡng Việt Soup - Vĩnh Lộc",
+                                                "food_id": 4795380,
+                                                "id": 15463,
+                                                "image": "/style/images/deli-dish-no-image.png",
+                                                "name": "Cháo bò",
+                                                "price": 20000,
+                                                "restaurant_id": 774493,
+                                                "total_view": 0,
+                                                "total_vote": 0,
+                                                "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "description": "search success"
+                    }
+                }
+            }
+        },
+        "/mealtoday": {
+            "get": {
+                "tags": [
+                    "Foods"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "get meals today",
+                "parameters": [
+                    {
+                        "name": "temperature",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "",
+                                        "message": "Get meal today success",
+                                        "status": 200,
+                                        "success": true,
+                                        "value": {
+                                            "meal": {
+                                                "breakfast": {
+                                                    "average_score": 0.0,
+                                                    "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                    "food_id": 4319169,
+                                                    "id": 25216,
+                                                    "image": "/style/images/deli-dish-no-image.png",
+                                                    "is_bookmark": false,
+                                                    "latitude": 21.0059,
+                                                    "longitude": 105.832,
+                                                    "name": "Bún Gà",
+                                                    "price": 35000,
+                                                    "restaurant_id": 777649,
+                                                    "total_view": 0,
+                                                    "total_vote": 0,
+                                                    "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                                },
+                                                "dinner": {
+                                                    "average_score": 0.0,
+                                                    "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                    "food_id": 4060093,
+                                                    "id": 23976,
+                                                    "image": "//media.foody.vn/res/g78/777241/s600x600/957ec7e6-808a-4459-ae97-d74732955731.jpg",
+                                                    "is_bookmark": false,
+                                                    "latitude": 21.0242,
+                                                    "longitude": 105.856,
+                                                    "name": "Bún Bò Nam Bộ",
+                                                    "price": 54000,
+                                                    "restaurant_id": 777241,
+                                                    "total_view": 0,
+                                                    "total_vote": 0,
+                                                    "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                                },
+                                                "lunch": {
+                                                    "average_score": 0.0,
+                                                    "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                    "food_id": 3797452,
+                                                    "id": 10781,
+                                                    "image": "/style/images/deli-dish-no-image.png",
+                                                    "is_bookmark": false,
+                                                    "latitude": 21.0112,
+                                                    "longitude": 105.863,
+                                                    "name": "Heo Cháy Tỏi - 500gr",
+                                                    "price": 160000,
+                                                    "restaurant_id": 773453,
+                                                    "total_view": 0,
+                                                    "total_vote": 0,
+                                                    "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                                },
+                                                "temperature": {
+                                                    "average_score": 0.0,
+                                                    "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                                    "food_id": 4126099,
+                                                    "id": 26437,
+                                                    "image": "//media.foody.vn/res/g78/777978/s600x600/201891492231-ba-chi-hun-khoi.jpg",
+                                                    "is_bookmark": false,
+                                                    "latitude": 20.9724,
+                                                    "longitude": 105.821,
+                                                    "name": "Pizza Ba Chỉ Hun Khói Đã Nướng",
+                                                    "price": 75000,
+                                                    "restaurant_id": 777978,
+                                                    "total_view": 0,
+                                                    "total_vote": 0,
+                                                    "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                                }
+                                            }
+                                        },
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "get success"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "Params isn't in correct format",
+                                        "message": "",
+                                        "status": 400,
+                                        "success": false,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "format failure"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "Params is missing",
+                                        "message": "",
+                                        "status": 401,
+                                        "success": false,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "params failure"
+                    }
+                }
+            }
+        },
+        "/store/<store_id>": {
+            "get": {
+                "tags": [
+                    "Store"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "get store by id",
+                "parameters": [
+                    {
+                        "name": "store_id",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "",
+                                        "message": "get store success",
+                                        "status": 201,
+                                        "success": true,
+                                        "value": {
+                                            "address": "262 Nguyễn Văn Linh, P. Thạc Gián, Quận Thanh Khê, Đà Nẵng",
+                                            "category": "Quán ăn, Giao cơm văn phòng, ",
+                                            "food_name": "Anh Năm - Cơm Gà Đèo Le",
+                                            "id": 55,
+                                            "id_food_category": null,
+                                            "image_path": "https://images.foody.vn/res/g78/770624/prof/s120x120/foody-upload-api-foody-mobile-anh-nam-jpg-180927110630.jpg",
+                                            "latitude": 16.0598,
+                                            "longitude": 108.208,
+                                            "menu": "(Cơm) Gà xé, (Cơm) Gà quay, (Cơm) Gà sả ớt, (Cơm) Gà đèo le nướng lá chuối, Cơm thêm (Chén), (Cơm) Gà cari, Gói combo 1 (2 người), (Thố) Cơm gà sả ớt, (Cơm) Gà chặt Nam Hải, Cơm cánh gà chiên mắm, (Thố) cơm gà quay, Canh khổ qua độn thịt, (Thố) Cơm Gà Xé, (Thố) Cơm gà đèo le nướng lá chuối, CANH CHUA, Cơm cá kho tộ, (Thố) Cơm gà chặt Hải Nam, trứng hấp (miếng), Gói combo 2 (4 người), Cơm thêm (Dĩa), Cơm chả trứng + gà xé, Cơm sườn nướng, Cơm thịt kho trứng, Cơm chả trứng, Cơm trứng hấp thịt, Cơm",
+                                            "rate": 3.45,
+                                            "restaurant_id": 770624,
+                                            "totalreview": 24,
+                                            "view": 0,
+                                            "worktime": null
+                                        },
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "get success"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "error": "not exist store failure",
+                                        "message": "",
+                                        "status": 401,
+                                        "success": false,
+                                        "value": {},
+                                        "values": []
+                                    }
+                                }
+                            }
+                        },
+                        "description": "get failure"
+                    }
+                }
+            }
+        },
+        "/survey": {
+            "get": {
+                "tags": [
+                    "Survey"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "get survey",
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "",
+                                    "message": "get list survey success",
+                                    "status": 201,
+                                    "success": true,
+                                    "value": {},
+                                    "values": [
+                                        {
+                                            "e_name": "Bún",
+                                            "id": 6,
+                                            "tags": [
+                                                {
+                                                    "id": 4472,
+                                                    "imageURL": "https://2.pik.vn/202010690772-a2c0-46ad-b366-1f1a9f4e5957.jpg",
+                                                    "name": "Bún bò"
+                                                },
+                                                {
+                                                    "id": 4477,
+                                                    "imageURL": "https://2.pik.vn/2020962833a6-7cca-4dde-a68e-31d45900229d.jpg",
+                                                    "name": "Bún riêu"
+                                                },
+                                                {
+                                                    "id": 4549,
+                                                    "imageURL": "https://2.pik.vn/2020426bac65-f6a0-402a-898b-cbdfddccc8f2.jpg",
+                                                    "name": "Bún chả cá"
+                                                },
+                                                {
+                                                    "id": 4550,
+                                                    "imageURL": "https://2.pik.vn/20202d62f6ce-1b40-4bb1-9250-54d5612d76e6.jpg",
+                                                    "name": "Bún chả"
+                                                },
+                                                {
+                                                    "id": 5057,
+                                                    "imageURL": "https://2.pik.vn/2020cb6908bd-eec8-4c7c-b9b9-6925665e4af2.jpg",
+                                                    "name": "Bún Ốc"
+                                                },
+                                                {
+                                                    "id": 6176,
+                                                    "imageURL": "https://2.pik.vn/2020c025b659-cef0-416d-959d-a1bf299da178.jpg",
+                                                    "name": "Bún Thang"
+                                                },
+                                                {
+                                                    "id": 4615,
+                                                    "imageURL": "https://2.pik.vn/2020033cfd41-9ade-49cb-b4df-267b228e19a6.jpg",
+                                                    "name": "thịt nướng"
+                                                }
+                                            ],
+                                            "v_name": "Bún"
+                                        },
+                                        {
+                                            "e_name": "Frog",
+                                            "id": 25,
+                                            "tags": [
+                                                {
+                                                    "id": 8466,
+                                                    "imageURL": "https://2.pik.vn/2020753f813d-78f2-42a2-9a71-9bb66e2d5d13.jpg",
+                                                    "name": "Ếch Măng Cay"
+                                                }
+                                            ],
+                                            "v_name": "Ếch"
+                                        },
+                                        {
+                                            "e_name": "Chicken",
+                                            "id": 2,
+                                            "tags": [
+                                                {
+                                                    "id": 4224,
+                                                    "imageURL": "https://2.pik.vn/2020772829ea-9f0e-4d6c-913d-7d63f9ee4378.png",
+                                                    "name": "Gà quay"
+                                                },
+                                                {
+                                                    "id": 9143,
+                                                    "imageURL": "https://2.pik.vn/2020389a5590-9c70-4cd9-8ff4-6b2b37ab72ee.jpg",
+                                                    "name": "Chicken Pizza"
+                                                }
+                                            ],
+                                            "v_name": "Gà"
+                                        },
+                                        {
+                                            "e_name": "Cháo",
+                                            "id": 5,
+                                            "tags": [
+                                                {
+                                                    "id": 4849,
+                                                    "imageURL": "https://2.pik.vn/2020365f204a-0391-405b-87a0-c5929183d9f0.jpg",
+                                                    "name": "Cháo Lòng"
+                                                },
+                                                {
+                                                    "id": 8055,
+                                                    "imageURL": "https://2.pik.vn/2020e57216bd-c839-4e2a-be39-b86d858ee53e.jpg",
+                                                    "name": "Cháo Gà"
+                                                },
+                                                {
+                                                    "id": 8031,
+                                                    "imageURL": "https://2.pik.vn/20209858c6a6-1193-4798-8c76-b89adc883952.jpg",
+                                                    "name": "Cháo Rau"
+                                                },
+                                                {
+                                                    "id": 6393,
+                                                    "imageURL": "https://2.pik.vn/2020caa9b12a-1ddf-4876-b1b7-0f92db5537d3.jpg",
+                                                    "name": "Cháo Canh Mềm"
+                                                }
+                                            ],
+                                            "v_name": "Cháo"
+                                        },
+                                        {
+                                            "e_name": "Chè",
+                                            "id": 83,
+                                            "tags": [
+                                                {
+                                                    "id": 4363,
+                                                    "imageURL": "https://2.pik.vn/20206424b8ab-4c67-4827-8b73-56044832d4ce.jpg",
+                                                    "name": "Chè Sen"
+                                                },
+                                                {
+                                                    "id": 4664,
+                                                    "imageURL": "https://2.pik.vn/2020e52dc8b0-c553-4a09-a4a7-b6f7bf93c531.jpg",
+                                                    "name": "Chè Khoai"
+                                                }
+                                            ],
+                                            "v_name": "Chè"
+                                        },
+                                        {
+                                            "e_name": "Bánh cuốn",
+                                            "id": 77,
+                                            "tags": [
+                                                {
+                                                    "id": 4878,
+                                                    "imageURL": "https://2.pik.vn/2020d2dccdc1-2c9b-46b0-88a2-2d917d83e3f1.jpg",
+                                                    "name": "Bánh cuốn"
+                                                }
+                                            ],
+                                            "v_name": "Bánh cuốn"
+                                        },
+                                        {
+                                            "e_name": "Bánh xèo",
+                                            "id": 68,
+                                            "tags": [
+                                                {
+                                                    "id": 5066,
+                                                    "imageURL": "https://2.pik.vn/202080870dbb-fcd8-4ede-8d07-147e36d25140.jpg",
+                                                    "name": "Bánh xèo"
+                                                }
+                                            ],
+                                            "v_name": "Bánh xèo"
+                                        },
+                                        {
+                                            "e_name": "Noodle",
+                                            "id": 37,
+                                            "tags": [
+                                                {
+                                                    "id": 6157,
+                                                    "imageURL": "https://2.pik.vn/2020c24eceab-ec60-4588-bc16-1ea23584cd0b.jpg",
+                                                    "name": "Sườn Sốt Cay"
+                                                },
+                                                {
+                                                    "id": 7206,
+                                                    "imageURL": "https://2.pik.vn/2020ee8b2292-ca32-4aee-9432-ef88253fef8a.jpg",
+                                                    "name": "Mỳ Cay"
+                                                },
+                                                {
+                                                    "id": 6158,
+                                                    "imageURL": "https://2.pik.vn/2020cbfdb7ba-92ab-468a-87fe-ed680c2a23b8.jpg",
+                                                    "name": "Gà Sốt Cay"
+                                                },
+                                                {
+                                                    "id": 8863,
+                                                    "imageURL": "https://2.pik.vn/20209835c589-15d6-4897-91c2-3aa38f799e7a.jpg",
+                                                    "name": "CAY Bibimbap"
+                                                }
+                                            ],
+                                            "v_name": "Mỳ"
+                                        },
+                                        {
+                                            "e_name": "Rice",
+                                            "id": 1,
+                                            "tags": [
+                                                {
+                                                    "id": 4503,
+                                                    "imageURL": "https://2.pik.vn/20202c80488f-5737-4ba8-9469-44fb6052a59e.jpg",
+                                                    "name": "Cơm tấm"
+                                                },
+                                                {
+                                                    "id": 9010,
+                                                    "imageURL": "https://2.pik.vn/2020521c4552-c8d2-4d01-bc10-11ca788ea9f7.jpg",
+                                                    "name": "Cơm Gà"
+                                                },
+                                                {
+                                                    "id": 5737,
+                                                    "imageURL": "https://2.pik.vn/20207b7ece9f-1e76-47c7-a06c-3ebff361ba77.jpg",
+                                                    "name": "Cơm Cháy"
+                                                },
+                                                {
+                                                    "id": 4508,
+                                                    "imageURL": "https://2.pik.vn/202096a7b000-1881-4792-864e-ad43817108ea.jpg",
+                                                    "name": "Cơm chiên"
+                                                }
+                                            ],
+                                            "v_name": "Cơm"
+                                        },
+                                        {
+                                            "e_name": "Fish",
+                                            "id": 10,
+                                            "tags": [
+                                                {
+                                                    "id": 5795,
+                                                    "imageURL": "https://2.pik.vn/2020036f9984-ae33-4ba5-afee-8e4965a7236d.jpg",
+                                                    "name": "Cá kho"
+                                                },
+                                                {
+                                                    "id": 5807,
+                                                    "imageURL": "https://2.pik.vn/2020ad5f294a-778d-4322-9ed2-458d941b7746.jpg",
+                                                    "name": "trứng cá"
+                                                },
+                                                {
+                                                    "id": 4548,
+                                                    "imageURL": "https://2.pik.vn/20200856a1ff-2ff0-4103-9312-ea614fc0a756.jpg",
+                                                    "name": "chả cá"
+                                                },
+                                                {
+                                                    "id": 4891,
+                                                    "imageURL": "https://2.pik.vn/202033498ec3-6824-49bc-8a8e-a44d3dc44ca9.jpg",
+                                                    "name": "Cá viên"
+                                                }
+                                            ],
+                                            "v_name": "Cá"
+                                        },
+                                        {
+                                            "e_name": "Beef",
+                                            "id": 7,
+                                            "tags": [
+                                                {
+                                                    "id": 8498,
+                                                    "imageURL": "https://2.pik.vn/202019d7c642-0ddc-4389-a520-7fc9c4bbab12.jpg",
+                                                    "name": "beefsteak"
+                                                },
+                                                {
+                                                    "id": 5029,
+                                                    "imageURL": "https://2.pik.vn/202000f7524f-d3db-4db9-be64-daecf695c872.jpg",
+                                                    "name": "A Ground Beef Pizza"
+                                                },
+                                                {
+                                                    "id": 6179,
+                                                    "imageURL": "https://2.pik.vn/2020d5c163b7-3862-40ce-b8ab-4827cb834fbd.jpg",
+                                                    "name": "Xương bò"
+                                                },
+                                                {
+                                                    "id": 8150,
+                                                    "imageURL": "https://2.pik.vn/202085a028a7-3a86-400d-89af-9cae16fe6f9d.jpg",
+                                                    "name": "Bò tơ"
+                                                }
+                                            ],
+                                            "v_name": "Bò"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "description": "get success"
+                    }
+                }
+            }
+        },
+        "/survey/search": {
+            "get": {
+                "tags": [
+                    "Survey"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "search",
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        },
+                        "in": "query",
+                        "required": false
+                    },
+                    {
+                        "name": "offset",
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "in": "query",
+                        "required": false
+                    },
+                    {
+                        "name": "limit",
+                        "schema": {
+                            "type": "integer",
+                            "default": 200
+                        },
+                        "in": "query",
+                        "required": false
+                    }
+                ],
+                "summary": "search tags for survey",
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "",
+                                    "message": "search survey success",
+                                    "status": 201,
+                                    "success": true,
+                                    "value": {
+                                        "limit": 5,
+                                        "offset": 1,
+                                        "total_offset": 4,
+                                        "total_record": 17
+                                    },
+                                    "values": [
+                                        {
+                                            "id": 7419,
+                                            "imageURL": "",
+                                            "meta_tags": [
+                                                {
+                                                    "e_name": "Rice",
+                                                    "id": 1,
+                                                    "v_name": "Cơm"
+                                                },
+                                                {
+                                                    "e_name": "Fish",
+                                                    "id": 10,
+                                                    "v_name": "Cá"
+                                                }
+                                            ],
+                                            "name": "Cá cơm"
+                                        },
+                                        {
+                                            "id": 4221,
+                                            "imageURL": "",
+                                            "meta_tags": [
+                                                {
+                                                    "e_name": "Rice",
+                                                    "id": 1,
+                                                    "v_name": "Cơm"
+                                                }
+                                            ],
+                                            "name": "Cơm"
+                                        },
+                                        {
+                                            "id": 7289,
+                                            "imageURL": "",
+                                            "meta_tags": [
+                                                {
+                                                    "e_name": "Rice",
+                                                    "id": 1,
+                                                    "v_name": "Cơm"
+                                                },
+                                                {
+                                                    "e_name": "Vegetarian",
+                                                    "id": 22,
+                                                    "v_name": "Chay"
+                                                }
+                                            ],
+                                            "name": "Cơm chay"
+                                        },
+                                        {
+                                            "id": 5737,
+                                            "imageURL": "",
+                                            "meta_tags": [
+                                                {
+                                                    "e_name": "Rice",
+                                                    "id": 1,
+                                                    "v_name": "Cơm"
+                                                }
+                                            ],
+                                            "name": "Cơm Cháy"
+                                        },
+                                        {
+                                            "id": 4508,
+                                            "imageURL": "",
+                                            "meta_tags": [
+                                                {
+                                                    "e_name": "Rice",
+                                                    "id": 1,
+                                                    "v_name": "Cơm"
+                                                },
+                                                {
+                                                    "e_name": "Fried",
+                                                    "id": 16,
+                                                    "v_name": "Chiên"
+                                                }
+                                            ],
+                                            "name": "Cơm chiên"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "description": "search success"
+                    }
+                }
+            }
+        },
+        "/rating": {
+            "post": {
+                "tags": [
+                    "Survey"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "rating survey",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "rating": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "meta_tag_id": {
+                                                    "type": "integer",
+                                                    "description": "Meta tag's id"
+                                                },
+                                                "tag_ids": {
+                                                    "type": "array",
+                                                    "description": "List of tag_ids"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "example": {
+                                "rating": [
+                                    {
+                                        "meta_tag_id": "1",
+                                        "tag_ids": [
+                                            9010,
+                                            4502
+                                        ]
+                                    },
+                                    {
+                                        "meta_tag_id": "2",
+                                        "tag_ids": [
+                                            6937,
+                                            9275
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "",
+                                    "message": "rating success",
+                                    "status": 201,
+                                    "success": true,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "rating success"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "not correct format request body failure",
+                                    "message": "",
+                                    "status": 401,
+                                    "success": false,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "rating failure"
+                    }
+                }
+            }
+        },
+        "/rating/top": {
+            "get": {
+                "tags": [
+                    "Survey"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 5
+                        },
+                        "required": false
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "required": false
+                    }
+                ],
+                "summary": "get top rating foods",
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "",
+                                    "message": "get list top success",
+                                    "status": 201,
+                                    "success": true,
+                                    "value": {},
+                                    "values": [
+                                        {
+                                            "average_score": 0.0,
+                                            "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                            "description": "Quán Chị Thu - Bún Bò, Hủ Tiếu & Bò Kho",
+                                            "food_id": 4657945,
+                                            "id": 6728,
+                                            "image": "/style/images/deli-dish-no-image.png",
+                                            "name": "Bún bò bò viên",
+                                            "price": 25000,
+                                            "rank": 1,
+                                            "rate": 89,
+                                            "restaurant_id": 772110,
+                                            "total_view": 0,
+                                            "total_vote": 0,
+                                            "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                        },
+                                        {
+                                            "average_score": 0.0,
+                                            "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                            "description": "Hoàng Yến - Phở, Cơm & Bún Bò Huế",
+                                            "food_id": 4658145,
+                                            "id": 6766,
+                                            "image": "/style/images/deli-dish-no-image.png",
+                                            "name": "Bún bò bò viên",
+                                            "price": 25000,
+                                            "rank": 2,
+                                            "rate": 89,
+                                            "restaurant_id": 772117,
+                                            "total_view": 0,
+                                            "total_vote": 0,
+                                            "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                        },
+                                        {
+                                            "average_score": 0.0,
+                                            "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                            "description": "Bún Bò Huế - Kha Vạn Cân",
+                                            "food_id": 4037948,
+                                            "id": 4193,
+                                            "image": "/style/images/deli-dish-no-image.png",
+                                            "name": "Bún bò nạm bò viên",
+                                            "price": 25000,
+                                            "rank": 3,
+                                            "rate": 89,
+                                            "restaurant_id": 771561,
+                                            "total_view": 0,
+                                            "total_vote": 0,
+                                            "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                        },
+                                        {
+                                            "average_score": 0.0,
+                                            "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                            "description": "Bún Bò Huế - Kha Vạn Cân",
+                                            "food_id": 4037098,
+                                            "id": 4197,
+                                            "image": "/style/images/deli-dish-no-image.png",
+                                            "name": "Bún bò tái bò viên",
+                                            "price": 25000,
+                                            "rank": 4,
+                                            "rate": 89,
+                                            "restaurant_id": 771561,
+                                            "total_view": 0,
+                                            "total_vote": 0,
+                                            "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                        },
+                                        {
+                                            "average_score": 0.0,
+                                            "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                            "description": "Huỳnh Như - Bún Bò Huế",
+                                            "food_id": 4602154,
+                                            "id": 9822,
+                                            "image": "/style/images/deli-dish-no-image.png",
+                                            "name": "Bún bò + sụn bò",
+                                            "price": 30000,
+                                            "rank": 5,
+                                            "rate": 89,
+                                            "restaurant_id": 773079,
+                                            "total_view": 0,
+                                            "total_vote": 0,
+                                            "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "description": "get success"
+                    }
+                }
+            }
+        },
+        "/allergy": {
+            "post": {
+                "tags": [
+                    "Allergy"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "create allergy",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "required": [
+                                    "tag_ids"
+                                ],
+                                "properties": {
+                                    "meta_tag_ids": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            },
+                            "example": {
+                                "meta_tag_ids": [
+                                    4198,
+                                    4199
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "",
+                                    "message": "create allergy success",
+                                    "status": 201,
+                                    "success": true,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "create success"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "not correct format request body failure",
+                                    "message": "",
+                                    "status": 401,
+                                    "success": false,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "format failure"
+                    },
+                    "402": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "not exist tag_ids failure",
+                                    "message": "",
+                                    "status": 402,
+                                    "success": false,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "exist failure"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "something went wrong",
+                                    "message": "",
+                                    "status": 403,
+                                    "success": false,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "failure"
+                    }
+                }
+            }
+        },
+        "/allergies": {
+            "get": {
+                "tags": [
+                    "Allergy"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "get list allergies",
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "error": "",
+                                    "message": "get list allergies success",
+                                    "status": 201,
+                                    "success": true,
+                                    "value": {},
+                                    "values": [
+                                        {
+                                            "id": 91,
+                                            "meta_tag_id": 1,
+                                            "name": "Cơm"
+                                        },
+                                        {
+                                            "id": 92,
+                                            "meta_tag_id": 2,
+                                            "name": "Gà"
+                                        },
+                                        {
+                                            "id": 93,
+                                            "meta_tag_id": 3,
+                                            "name": "Bánh ngọt"
+                                        },
+                                        {
+                                            "id": 94,
+                                            "meta_tag_id": 4,
+                                            "name": "Phở"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "description": "get success"
+                    }
+                }
+            }
+        },
+        "/allergy/<allergy_id>": {
+            "delete": {
+                "tags": [
+                    "Allergy"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "allergy_id",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    }
+                ],
+                "summary": "delete allergy",
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "error": "",
+                                    "message": "delete allergy success",
+                                    "status": 201,
+                                    "success": true,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "delete success"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "error": "something went wrong",
+                                    "message": "",
+                                    "status": 401,
+                                    "success": true,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "failure"
+                    }
+                }
+            }
+        },
+        "/bookmarks": {
+            "get": {
+                "tags": [
+                    "Bookmark"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "get list bookmarks",
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "",
+                                    "message": "get list bookmarks success",
+                                    "status": 201,
+                                    "success": true,
+                                    "value": {},
+                                    "values": [
+                                        {
+                                            "address": "262 Nguyễn Văn Linh, P. Thạc Gián, Quận Thanh Khê, Đà Nẵng",
+                                            "average_score": 0.0,
+                                            "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                            "food_id": 4049613,
+                                            "id": 4,
+                                            "image": "//media.foody.vn/res/g78/770624/s600x600/2018911162032-e31d6cf59ea77ef927b6.jpg",
+                                            "is_bookmarked": true,
+                                            "name": "(Cơm) Gà đèo le nướng lá chuối",
+                                            "price": 55000,
+                                            "restaurant_id": 770624,
+                                            "total_view": 0,
+                                            "total_vote": 0,
+                                            "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                        },
+                                        {
+                                            "address": "262 Nguyễn Văn Linh, P. Thạc Gián, Quận Thanh Khê, Đà Nẵng",
+                                            "average_score": 0.0,
+                                            "created_time": "Thu, 13 Jun 2019 21:35:08 GMT",
+                                            "food_id": 4057150,
+                                            "id": 3,
+                                            "image": "//media.foody.vn/res/g78/770624/s600x600/2018927114249-com-ga-sa-ot.jpg",
+                                            "is_bookmarked": true,
+                                            "name": "(Cơm) Gà sả ớt",
+                                            "price": 25000,
+                                            "restaurant_id": 770624,
+                                            "total_view": 0,
+                                            "total_vote": 0,
+                                            "updated_time": "Thu, 13 Jun 2019 21:35:30 GMT"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "description": "get success"
+                    }
+                }
+            }
+        },
+        "/bookmark": {
+            "post": {
+                "tags": [
+                    "Bookmark"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "create bookmark",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "required": [
+                                    "food_id"
+                                ],
+                                "properties": {
+                                    "food_id": {
+                                        "type": "integer"
+                                    }
+                                }
+                            },
+                            "example": {
+                                "food_id": 2
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "",
+                                    "message": "create bookmark success",
+                                    "status": 201,
+                                    "success": true,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "create success"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "not correct format food_id failure",
+                                    "message": "",
+                                    "status": 401,
+                                    "success": false,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "format failure"
+                    },
+                    "402": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "not exist food_id failure",
+                                    "message": "",
+                                    "status": 402,
+                                    "success": false,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "exist failure"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "something went wrong",
+                                    "message": "",
+                                    "status": 403,
+                                    "success": false,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "failure"
+                    }
+                }
+            }
+        },
+        "/bookmark/<food_id>": {
+            "delete": {
+                "tags": [
+                    "Bookmark"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "remove bookmark",
+                "parameters": [
+                    {
+                        "name": "food_id",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "",
+                                    "message": "delete bookmark success",
+                                    "status": 201,
+                                    "success": true,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "delete success"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "something went wrong",
+                                    "message": "",
+                                    "status": 401,
+                                    "success": false,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "failure"
+                    }
+                }
+            }
+        },
+        "/history": {
+            "post": {
+                "tags": [
+                    "History"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "create history",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "required": [
+                                    "food_id"
+                                ],
+                                "properties": {
+                                    "food_id": {
+                                        "type": "integer"
+                                    }
+                                }
+                            },
+                            "example": {
+                                "food_id": 2
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "",
+                                    "message": "create history success",
+                                    "status": 201,
+                                    "success": true,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "create success"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "not correct format history failure",
+                                    "message": "",
+                                    "status": 401,
+                                    "success": false,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "format failure"
+                    },
+                    "402": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "not exist food_id failure",
+                                    "message": "",
+                                    "status": 402,
+                                    "success": false,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "exist failure"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "something went wrong",
+                                    "message": "",
+                                    "status": 403,
+                                    "success": false,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "failure"
+                    }
+                }
+            }
+        },
+        "/histories": {
+            "get": {
+                "tags": [
+                    "History"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "get list histories",
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "",
+                                    "message": "get list histories success",
+                                    "status": 201,
+                                    "success": true,
+                                    "value": {},
+                                    "values": [
+                                        {
+                                            "created_at": "Wed, 15 Apr 2020 18:51:50 GMT",
+                                            "food_id": 1,
+                                            "food_name": "(Cơm) Gà xé",
+                                            "id": 1,
+                                            "image": "//media.foody.vn/res/g78/770624/s600x600/2018927115339-com-ga-xe.jpg",
+                                            "uid": "BE8m70phdEeRtvjN38bNGEDfhHV2"
+                                        },
+                                        {
+                                            "created_at": "Wed, 15 Apr 2020 22:15:18 GMT",
+                                            "food_id": 2,
+                                            "food_name": "(Cơm) Gà quay",
+                                            "id": 2,
+                                            "image": "//media.foody.vn/res/g78/770624/s600x600/2018911162122-298e0f65fd371d694426.jpg",
+                                            "uid": "BE8m70phdEeRtvjN38bNGEDfhHV2"
+                                        },
+                                        {
+                                            "created_at": "Wed, 15 Apr 2020 22:15:23 GMT",
+                                            "food_id": 3,
+                                            "food_name": "(Cơm) Gà sả ớt",
+                                            "id": 3,
+                                            "image": "//media.foody.vn/res/g78/770624/s600x600/2018927114249-com-ga-sa-ot.jpg",
+                                            "uid": "BE8m70phdEeRtvjN38bNGEDfhHV2"
+                                        },
+                                        {
+                                            "created_at": "Wed, 15 Apr 2020 22:16:55 GMT",
+                                            "food_id": 4,
+                                            "food_name": "(Cơm) Gà đèo le nướng lá chuối",
+                                            "id": 4,
+                                            "image": "//media.foody.vn/res/g78/770624/s600x600/2018911162032-e31d6cf59ea77ef927b6.jpg",
+                                            "uid": "BE8m70phdEeRtvjN38bNGEDfhHV2"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "description": "get success"
+                    }
+                }
+            }
+        },
+        "/history/<history_id>": {
+            "delete": {
+                "tags": [
+                    "History"
+                ],
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "summary": "delete histories",
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "",
+                                    "message": "delete history success",
+                                    "status": 201,
+                                    "success": true,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "get success"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                },
+                                "example": {
+                                    "error": "something went wrong",
+                                    "message": "",
+                                    "status": 401,
+                                    "success": false,
+                                    "value": {},
+                                    "values": []
+                                }
+                            }
+                        },
+                        "description": "failure"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+    {% if not is_auth %}
+        <p>This is WIET Application admin page. To continue, please <a href="/admin/login">login!</a></p>
+    {% endif %}
+    {% if is_auth %}
+        <p>Thank you for using WIET Application admin page. Click <a href="/admin/logout">here</a> to logout!</p>
+    {% endif %}
+{% endblock %}

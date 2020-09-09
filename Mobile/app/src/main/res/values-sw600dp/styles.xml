@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name= "android:fontFamily" >@font/roboto</item>-->
+        <item name="android:typeface">serif</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="FontTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textViewStyle">@style/FontStyleTextView</item>
+        <item name="android:editTextStyle">@style/FontStyleEditText</item>
+    </style>
+
+    <style name="FontStyleTextView" parent="android:Widget.TextView">
+        <item name="android:typeface">monospace</item>
+    </style>
+
+    <style name="FontStyleEditText" parent="android:Widget.EditText">
+        <item name="android:typeface">monospace</item>
+    </style>
+
+    <style name="MyRaidoButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="colorAccent">@color/colorButton</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/colorButton</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
+    </style>
+
+    <style name="spinner_style">
+        <item name="android:textSize">@dimen/text_information_activity</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="CustomTextView" parent="android:Widget.TextView">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+
+</resources>

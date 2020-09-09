@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="font_normal">11sp</dimen>
+
+    <dimen name="width_item">300dp</dimen>
+
+    <dimen name="app_border">80dp</dimen>
+
+    <dimen name="search_bar_border">20dp</dimen>
+
+    <dimen name="default_text_size">25sp</dimen>
+
+
+    <dimen name="margin_top_light">12dp</dimen>
+    <dimen name="margin_top_medium">24dp</dimen>
+    <dimen name="margin_top_large">48dp</dimen>
+    <dimen name="text_information_activity">30sp</dimen>
+    <dimen name="margin_info">21dp</dimen>
+    <dimen name="text_more">40sp</dimen>
+    <dimen name="margin_text_more">10dp</dimen>
+    <dimen name="padding_text_more">10dp</dimen>
+    <dimen name="text_profile">30dp</dimen>
+    <dimen name="padding_text_profile">10dp</dimen>
+
+    <dimen name="icon_height_weight">50dp</dimen>
+
+    <dimen name="text_size_title">40sp</dimen>
+
+</resources>

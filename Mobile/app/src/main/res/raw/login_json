@@ -1,0 +1,21 @@
+{
+  "error": "",
+  "message": "Authentication success",
+  "status": 200,
+  "success": true,
+  "value": {
+    "access_token": "eyJ0eXA...",
+    "user": {
+      "avatar": "https://lh3.googleusercontent.com/a-/AAuE7mAndofLw7A8FihtYpS1sWNidSn__rW-3Crw32-lZw=s96-c",
+      "created_at": "Thu, 27 Feb 2020 10:46:22 GMT",
+      "dob": "Mon, 01 Jan 1900 00:00:00 GMT",
+      "email": "dinhluu098@gmail.com",
+      "fullname": "luu nguyen",
+      "is_first_login": true,
+      "is_vegetarian": false,
+      "uid": "kcOIPVcFTgX0hGfjPac6hXqcLKb2",
+      "updated_at": "Thu, 27 Feb 2020 10:46:22 GMT"
+    }
+  },
+  "values": []
+}

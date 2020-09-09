@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="colorPrimary">#EE8572</color>
+    <color name="colorPrimaryDark">#D96854</color>
+    <color name="colorButton">#35495E</color>
+    <color name="colorAccent">#81C58A</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorText">#86929E</color>
+    <color name="colorGray">#B6B3B3</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlue">#00BCD4</color>
+    <color name="colorGreen">#4DF302</color>
+    <color name="colorTitle">#CBD9F0</color>
+    <color name="colorYellow">#F8E254</color>
+    <color name="colorTextView">#DFE9FD</color>
+    <color name="colorTextBlue">#74b9ff</color>
+    <color name="colorBlue1">#00BCD4</color>
+    <color name="colorBlue2">#03A9F4</color>
+    <color name="colorBlue3">#2196F3</color>
+    <color name="colorBlue4">#2074B9</color>
+    <color name="colorRed">#F05879</color>
+    <color name="colorPink">#AD6B71</color>
+    <color name="colorPrimaryRed">#cf2127</color>
+
+    <color name="text_activity">#212121</color>
+
+    <color name="black_overlay">#66000000</color>
+
+</resources>

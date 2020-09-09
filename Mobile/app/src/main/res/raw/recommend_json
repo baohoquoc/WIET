@@ -1,0 +1,75 @@
+{
+    "success":true,
+    "message":"string",
+    "error":"string",
+    "status":200,
+    "value":{
+    },
+    "values":[
+        {
+            "id":0,
+            "restaurant_id":0,
+            "food_id":0,
+            "name":"Bún chả",
+            "price":"10000",
+            "image":"https://2.pik.vn/202046e5cd10-4dc3-496d-8ba3-df5021e1647f.jpg",
+            "average_score":"12",
+            "total_vote":"21",
+            "total_view":"12",
+            "create_time":"Thu, 27 Feb 2020 10:46:22 GMT",
+            "create_update":"Thu, 27 Feb 2020 12:46:22 GMT"
+        },
+        {
+            "id":1,
+            "restaurant_id":1,
+            "food_id":1,
+            "name":"Bún chả tôm",
+            "price":"10000",
+            "image":"https://2.pik.vn/202046e5cd10-4dc3-496d-8ba3-df5021e1647f.jpg",
+            "average_score":"12",
+            "total_vote":"21",
+            "total_view":"12",
+            "create_time":"Thu, 27 Feb 2020 10:46:22 GMT",
+            "create_update":"Thu, 27 Feb 2020 12:46:22 GMT"
+        },
+        {
+            "id":2,
+            "restaurant_id":2,
+            "food_id":2,
+            "name":"Bún chả cua",
+            "price":"10000",
+            "image":"https://2.pik.vn/202046e5cd10-4dc3-496d-8ba3-df5021e1647f.jpg",
+            "average_score":"12",
+            "total_vote":"21",
+            "total_view":"12",
+            "create_time":"Thu, 27 Feb 2020 10:46:22 GMT",
+            "create_update":"Thu, 27 Feb 2020 12:46:22 GMT"
+        },
+        {
+            "id":3,
+            "restaurant_id":3,
+            "food_id":3,
+            "name":"Bún chả gà",
+            "price":"10000",
+            "image":"https://2.pik.vn/202046e5cd10-4dc3-496d-8ba3-df5021e1647f.jpg",
+            "average_score":"12",
+            "total_vote":"21",
+            "total_view":"12",
+            "create_time":"Thu, 27 Feb 2020 10:46:22 GMT",
+            "create_update":"Thu, 27 Feb 2020 12:46:22 GMT"
+        },
+        {
+            "id":4,
+            "restaurant_id":4,
+            "food_id":4,
+            "name":"Bún chả vịt",
+            "price":"10000",
+            "image":"https://2.pik.vn/202046e5cd10-4dc3-496d-8ba3-df5021e1647f.jpg",
+            "average_score":"12",
+            "total_vote":"21",
+            "total_view":"12",
+            "create_time":"Thu, 27 Feb 2020 10:46:22 GMT",
+            "create_update":"Thu, 27 Feb 2020 12:46:22 GMT"
+        }
+    ]
+}

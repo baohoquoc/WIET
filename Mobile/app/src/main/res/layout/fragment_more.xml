@@ -1,0 +1,126 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.senior.wiet.lib.model.MoreModel" />
+
+        <variable
+            name="presenter"
+            type="com.senior.wiet.fragments.more.MorePresenter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        tools:context="com.senior.wiet.fragments.more.MoreFragment">
+
+        <TextView
+            android:id="@+id/tvMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txttitle"
+            android:textSize="25dp"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="26dp"
+            android:elevation="6dp"
+            android:background="@drawable/app_border"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvMore"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                style="@style/CustomTextView"
+                android:id="@+id/tvHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/app_border"
+                android:drawableLeft="@drawable/more_ic_history_24dp"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:onClick="@{() -> presenter.onHistoryClick() }"
+                android:paddingLeft="43dp"
+                android:paddingTop="13dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="13dp"
+                android:text="@string/txthistoryRecommendations"
+                android:textSize="@dimen/text_more"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/CustomTextView"
+                android:id="@+id/tvBookmark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_more_button"
+                android:drawableLeft="@drawable/more_ic_collections_bookmark_24dp"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:onClick="@{() -> presenter.onBookmarkClick() }"
+                android:paddingLeft="43dp"
+                android:paddingTop="13dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="13dp"
+                android:text="@string/txtbookmarkFoods"
+                android:textSize="@dimen/text_more"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHistory" />
+
+            <TextView
+                style="@style/CustomTextView"
+                android:id="@+id/tvProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_more_button"
+                android:drawableLeft="@drawable/more_ic_person_outline_24dp"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:onClick="@{() -> presenter.onProfileClick() }"
+                android:paddingLeft="43dp"
+                android:paddingTop="13dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="13dp"
+                android:text="@string/txtprofile"
+                android:textSize="@dimen/text_more"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBookmark" />
+
+            <TextView
+                style="@style/CustomTextView"
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_more_button"
+                android:drawableLeft="@drawable/ic_exit_to_ap_24dp"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:onClick="@{() -> presenter.onLogoutClick() }"
+                android:paddingLeft="43dp"
+                android:paddingTop="13dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="13dp"
+                android:text="@string/txtlogout"
+                android:textSize="@dimen/text_more"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProfile" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

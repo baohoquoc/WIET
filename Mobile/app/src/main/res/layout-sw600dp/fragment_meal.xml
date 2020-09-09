@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.senior.wiet.lib.model.MealModel" />
+
+        <variable
+            name="presenter"
+            type="com.senior.wiet.fragments.meal.MealPresenter" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        tools:context="com.senior.wiet.fragments.meal.MealFragment">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="161dp"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txt_meal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="100dp"
+                    android:text="@string/txtmealtoday"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="50sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout"
+            android:layout_marginTop="57dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/app_border"
+            android:elevation="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@id/refresh_layout">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbars="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> presenter.onTemperatureClick()}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/txtTemperature"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="60dp"
+                            android:text="@={model.temperature}"
+                            android:textSize="@dimen/text_more"
+                            app:layout_constraintLeft_toLeftOf="@id/layout4"
+                            app:layout_constraintTop_toTopOf="@id/layout4" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginLeft="34dp"
+                            android:layout_marginTop="130dp"
+                            app:cardCornerRadius="20dp"
+                            app:layout_constraintLeft_toLeftOf="@id/layout4"
+                            app:layout_constraintTop_toTopOf="@id/layout4">
+
+                            <ImageView
+                                android:id="@+id/imgTemperature"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@color/colorGray"
+                                app:layout_constraintLeft_toLeftOf="@id/layout4"
+                                app:layout_constraintTop_toTopOf="@id/layout4" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/txtName4"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="250dp"
+                            android:layout_marginTop="120dp"
+                            android:text="@={model.txtName4}"
+                            app:layout_constraintLeft_toLeftOf="@id/layout4"
+                            app:layout_constraintTop_toTopOf="@id/layout4" />
+
+                        <TextView
+                            android:id="@+id/txtDistance4"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="250dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@={model.distance4}"
+                            app:layout_constraintLeft_toLeftOf="@id/layout4"
+                            app:layout_constraintTop_toBottomOf="@id/txtName4" />
+
+                        <TextView
+                            android:id="@+id/txtPrice4"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="250dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@={model.price4}"
+                            app:layout_constraintLeft_toLeftOf="@id/layout4"
+                            app:layout_constraintTop_toBottomOf="@id/txtDistance4" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> presenter.onBreakfastClick()}"
+                        app:layout_constraintTop_toBottomOf="@id/layout4">
+
+                        <TextView
+                            android:id="@+id/txtBreakfast"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="25dp"
+                            android:text="@string/txtbreakfast"
+                            android:textSize="@dimen/text_more"
+                            app:layout_constraintLeft_toLeftOf="@id/layout1"
+                            app:layout_constraintTop_toTopOf="@id/layout1" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginLeft="34dp"
+                            android:layout_marginTop="86dp"
+                            app:cardCornerRadius="20dp"
+                            app:layout_constraintLeft_toLeftOf="@id/layout1"
+                            app:layout_constraintTop_toTopOf="@id/layout1">
+
+                            <ImageView
+                                android:id="@+id/imgBreakfast"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@color/colorGray"
+                                app:layout_constraintLeft_toLeftOf="@id/layout1"
+                                app:layout_constraintTop_toTopOf="@id/layout1" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/txtName1"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="250dp"
+                            android:layout_marginTop="61dp"
+                            android:text="@={model.txtName1}"
+                            app:layout_constraintLeft_toLeftOf="@id/layout1"
+                            app:layout_constraintTop_toTopOf="@id/layout1" />
+
+                        <TextView
+                            android:id="@+id/txtDistance1"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="250dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@={model.distance1}"
+                            app:layout_constraintLeft_toLeftOf="@id/layout1"
+                            app:layout_constraintTop_toBottomOf="@id/txtName1" />
+
+                        <TextView
+                            android:id="@+id/txtPrice1"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="250dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@={model.price1}"
+                            app:layout_constraintLeft_toLeftOf="@id/layout1"
+                            app:layout_constraintTop_toBottomOf="@id/txtDistance1" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> presenter.onLunchClick()}"
+                        app:layout_constraintTop_toBottomOf="@id/layout1">
+
+                        <TextView
+                            android:id="@+id/txtLunch"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="25dp"
+                            android:text="@string/txtluch"
+                            android:textSize="@dimen/text_more"
+                            app:layout_constraintLeft_toLeftOf="@id/layout2"
+                            app:layout_constraintTop_toTopOf="@id/layout2" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginLeft="34dp"
+                            android:layout_marginTop="86dp"
+                            app:cardCornerRadius="20dp"
+                            app:layout_constraintLeft_toLeftOf="@id/layout2"
+                            app:layout_constraintTop_toTopOf="@id/layout2">
+
+                            <ImageView
+                                android:id="@+id/imgLunch"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@color/colorGray"
+                                app:layout_constraintLeft_toLeftOf="@id/layout2"
+                                app:layout_constraintTop_toTopOf="@id/layout2" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/txtName2"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="250dp"
+                            android:layout_marginTop="61dp"
+                            android:text="@={model.txtName2}"
+                            app:layout_constraintLeft_toLeftOf="@id/layout2"
+                            app:layout_constraintTop_toTopOf="@id/layout2" />
+
+                        <TextView
+                            android:id="@+id/txtDistance2"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="250dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@={model.distance2}"
+                            app:layout_constraintLeft_toLeftOf="@id/layout2"
+                            app:layout_constraintTop_toBottomOf="@id/txtName2" />
+
+                        <TextView
+                            android:id="@+id/txtPrice2"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="250dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@={model.price2}"
+                            app:layout_constraintLeft_toLeftOf="@id/layout2"
+                            app:layout_constraintTop_toBottomOf="@id/txtDistance2" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> presenter.onDinnerClick()}"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:paddingBottom="100dp"
+                        app:layout_constraintTop_toBottomOf="@id/layout2">
+
+                        <TextView
+                            android:id="@+id/txtDinner"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="25dp"
+                            android:text="@string/txtdinner"
+                            android:textSize="@dimen/text_more"
+                            app:layout_constraintLeft_toLeftOf="@id/layout3"
+                            app:layout_constraintTop_toTopOf="@id/layout3" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginLeft="34dp"
+                            android:layout_marginTop="86dp"
+                            app:cardCornerRadius="20dp"
+                            app:layout_constraintLeft_toLeftOf="@id/layout3"
+                            app:layout_constraintTop_toTopOf="@id/layout3">
+
+                            <ImageView
+                                android:id="@+id/imgDinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@color/colorGray"
+                                app:layout_constraintLeft_toLeftOf="@id/layout3"
+                                app:layout_constraintTop_toTopOf="@id/layout3" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/txtName3"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="250dp"
+                            android:layout_marginTop="61dp"
+                            android:text="@={model.txtName3}"
+                            app:layout_constraintLeft_toLeftOf="@id/layout3"
+                            app:layout_constraintTop_toTopOf="@id/layout3" />
+
+                        <TextView
+                            android:id="@+id/txtDistance3"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="250dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@={model.distance3}"
+                            app:layout_constraintLeft_toLeftOf="@id/layout3"
+                            app:layout_constraintTop_toBottomOf="@id/txtName3" />
+
+                        <TextView
+                            android:id="@+id/txtPrice3"
+                            style="@style/CustomTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="250dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@={model.price3}"
+                            app:layout_constraintLeft_toLeftOf="@id/layout3"
+                            app:layout_constraintTop_toBottomOf="@id/txtDistance3" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

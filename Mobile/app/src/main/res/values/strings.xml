@@ -1,0 +1,194 @@
+<resources>
+    <string name="facebook_app_id">531785174128312</string>
+    <string name="fb_login_protocol_scheme">fb531785174128312</string>
+    <string name="skip">Tiếp tục</string>
+    <string name="wellcome">Wellcome to WIET</string>
+    <string name="search_hint">Tên món ăn yêu thích</string>
+    <string name="food_name">Tên món ăn</string>
+    <string name="skip_rating">Bạn có chắc bỏ qua khảo sát ?</string>
+    <string name="not_support_item">Xin lỗi TAG này chưa hỗ trợ !</string>
+    <string name="is_exist_tag"> Đã có trong bảng bên dưới !</string>
+    <string name="top_rating_food"> Top món ăn hàng đầu </string>
+    <string name="not_have_search_result"> Không có kết quả tìm kiềm !</string>
+    <string name="rating_success"> Khảo sát thành công </string>
+    <string name="rating_failure"> Khảo sát thất bại </string>
+    <string name="only_rating_one_time"> Chỉ khảo sát lần đầu tiên đăng nhập </string>
+    <string name="history_screen_title">Lịch sử gợi ý</string>
+    <string name="delete_history_item"> Bạn có chắc xóa món ăn này? </string>
+    <string name="delete_history_message"> Xóa thành công </string>
+    <string name="version">Phiên bản 1.2.1</string>
+    <string name="km_from_here"> km (từ vị trí hiện tại)</string>
+    <string name="error_no_internet">Lỗi</string>
+    <string name="no_email">Không có email</string>
+    <string name="application_need_location_permission">Ứng dụng bắt buộc phải có quyền truy cập vị trí</string>
+    <string name="history_empty">Lịch sử trống</string>
+    <string name="bookmark_empty">Món ăn đã lưu trống</string>
+    <string name="app_require_location_permission">Ứng dụng yêu cầu quyền truy cập vị trí !</string>
+    <string name="do_you_agree">Bạn có đồng ý không ?</string>
+    <string name="another_dishes_from_this_restaurant">Món ăn khác từ cửa hàng này</string>
+    <string name="no_data">Món ăn đã lưu trống</string>
+    <string name="your_location">Vị trí của bạn</string>
+    <!--Name items natigation bar-->
+    <string name="item1">Gợi ý</string>
+    <string name="item2">Món ăn</string>
+    <string name="item3">Tìm kiếm</string>
+    <string name="item4">Cài đặt</string>
+    <string name="item5">Chat bot</string>
+
+    <!--value Recomemmend Screen-->
+    <string name="what">Hôm bạn có muốn ăn món</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">Map</string>
+    <string-array name="location_array">
+        <item>Đà Nẵng</item>
+        <item>Hà Nội</item>
+        <item>TP. HCM</item>
+        <item>An Giang</item>
+        <item>Kon Tum</item>
+        <item>Đắk Nông</item>
+        <item>Sóc Trăng</item>
+        <item>Bình Phước</item>
+        <item>Hưng Yên</item>
+        <item>Thanh Hóa</item>
+        <item>Quảng Trị</item>
+        <item>Tuyên Quang</item>
+        <item>Quảng Ngãi</item>
+        <item>Lào Cai</item>
+        <item>Vĩnh Long</item>
+        <item>Lâm Đồng</item>
+        <item>Bình Định</item>
+        <item>Nghệ An</item>
+        <item>Kiên Giang</item>
+        <item>Hà Giang</item>
+        <item>Phú Yên</item>
+        <item>Lạng Sơn</item>
+        <item>Sơn La</item>
+        <item>Tây Ninh</item>
+        <item>Nam Định</item>
+        <item>Lai Châu</item>
+        <item>Bến Tre</item>
+        <item>Khánh Hòa</item>
+        <item>Bình Thuận</item>
+        <item>Cao Bằng</item>
+        <item>Hải Phòng</item>
+        <item>Ninh Bình</item>
+        <item>Yên Bái</item>
+        <item>Gia Lai</item>
+        <item>Hoà Bình</item>
+        <item>Bà Rịa - Vũng Tàu</item>
+        <item>Cà Mau</item>
+        <item>Bình Dương</item>
+        <item>Cần Thơ</item>
+        <item>Thừa Thiên Huế</item>
+        <item>Đồng Nai</item>
+        <item>Tiền Giang</item>
+        <item>Điện Biên</item>
+        <item>Vĩnh Phúc</item>
+        <item>Quảng Nam</item>
+        <item>Đắk Lắk</item>
+        <item>Thái Nguyên</item>
+        <item>Hải Dương</item>
+        <item>Bạc Liêu</item>
+        <item>Trà Vinh</item>
+        <item>Thái Bình</item>
+        <item>Hà Tĩnh</item>
+        <item>Ninh Thuận</item>
+        <item>Đồng Tháp</item>
+        <item>Long An</item>
+        <item>Hậu Giang</item>
+        <item>Quảng Ninh</item>
+        <item>Phú Thọ</item>
+        <item>Quảng Bình</item>
+        <item>Hà Nam</item>
+        <item>Bắc Ninh</item>
+        <item>Bắc Giang</item>
+        <item>Bắc Kạn</item>
+    </string-array>
+
+    <string name="error_not_exist_authenticate_firebase">Tài khoản bạn sử dụng không có email vui lòng thử lại</string>
+    <string name="error_login_social_through_firebase">Vui lòng thử lại với tài khoản mạng xã hội khác</string>
+    <string name="add_bookmark">Thêm bookmark thành công</string>
+    <string name="remove_bookmark">Xoá bookmark thành công</string>
+
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDyV935KuAJQP2eP3mwxgutquoj_ViW5eY</string>
+
+    <!--value Bookmark Screen-->
+    <string name="txtTitle">Món ăn đã lưu</string>
+
+    <!--value Recomemmend Screen-->
+    <string name="txtLabelRecommendScreen">Gợi ý cho hôm nay</string>
+    <string name="txtLabelRecommend">Có thể bạn muốn thử</string>
+    <string name="txtLabelPrice">Giá</string>
+    <string name="txtLabelFood">Món ăn</string>
+    <string name="txtlbDistance">Cách bạn</string>
+    <string name="alert_endofrecomment">Không có gợi ý nào cho hôm nay!</string>
+    <string name="btncancel">Hủy</string>
+    <string name="btnok">Đồng ý</string>
+    <string name="mAlertDialog">Địa điểm của bạn chưa được cập nhật dữ liệu</string>
+    <string name="noData">Không có dữ liệu</string>
+
+    <!--values Splash Screen-->
+    <string name="splash">Không thể truy cập vị trí hiện tại của bạn</string>
+
+    <!--values meal screen-->
+    <string name="txtbreakfast">Bữa sáng</string>
+    <string name="txtluch">Bữa trưa</string>
+    <string name="txtdinner">Bữa tối</string>
+
+    <!--values more screen-->
+    <string name="txttitle">  Tài khoản</string>
+    <string name="txthistoryRecommendations">&#160;Lịch sử gợi ý món ăn</string>
+    <string name="txtbookmarkFoods">&#160;Món ăn đã lưu</string>
+    <string name="txtprofile">&#160;Trang cá nhân</string>
+    <string name="txtlogout">&#160;Đăng xuất</string>
+    <string name="txtchatbot">&#160;ChatBot</string>
+
+    <!--values profile screen-->
+    <string name="txtTitleProfile">Thông tin cơ bản</string>
+    <string name="txtUserName">Lương Minh Hiếu</string>
+    <string name="txtCurrentLocation">Tỉnh/Thành phố</string>
+    <string name="txtdateOfBirth">Ngày sinh</string>
+    <string name="txtIsVegetarian">Chay trường</string>
+    <string name="txtIsAllergy">Dị ứng</string>
+    <string name="btnEdit">Chỉnh sửa</string>
+    <string name="isVegetarianProfile">Có</string>
+    <string name="noneVegetarianProfile">Không</string>
+    <string name="updateInfoSuccessMessage">Cập nhật thành công</string>
+    <string name="updateInfoFailMessage">Cập nhật thất bại</string>
+    <string name="invalidDOB">Ngày sinh không hợp lệ</string>
+
+
+    <string name="btnShowMap">Hiện bản đồ</string>
+
+    <string name="txtrestaurent">Thông tin nhà hàng</string>
+
+    <string name="txtmealtoday">Bữa ăn trong ngày</string>
+
+    <!--values login screen-->
+    <string name="btnLoginGoogle">Đăng nhập với Google</string>
+    <string name="btnLoginFacebook">Đăng nhập với Facebook</string>
+
+    <!--values meal screen-->
+    <string name="txttemperature">Nhiệt độ hôm nay là </string>
+
+    <string name="dialoglocation">Vị trí hiện tại của bạn đã thay đổi. Bạn có muốn cập nhật lại?</string>
+
+    <string name="isVegetarian">Có</string>
+    <string name="isUnVegetarian">Không</string>
+
+    <!--value information screen-->
+    <string name="btndone">Xong</string>
+    <string name="txtAllergy">Không</string>
+    <string name="deleteAllergy">Xoá thành công</string>
+    <string name="restartAppMessage">Bạn đã thay đổi dữ liệu quan trọng. Bạn có muốn khởi động lại không?</string>
+
+    <!--value chatbox screen-->
+    <string name="edittext">Type \"What can you do?\"</string>
+
+    <string name="txttitilelist">Danh sách món ăn vào</string>
+</resources>
